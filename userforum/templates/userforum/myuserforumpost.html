@@ -1,0 +1,94 @@
+{% extends "userforum/forumbaseprivate.html" %}
+{%load static%}
+
+	{% block main %}
+		<section id="hero_in" class="general">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Tạo Chủ Đề Hỏi Đáp</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		
+
+		<div class="" align="center" style="width:100%">
+            <div class="page-title" align="center">
+              <div class="title_left" style="width:100%">
+                
+              </div>
+
+          
+        </div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="bloglist singlepost">
+					<form class="form"  enctype="multipart/form-data" method="POST">
+						{% csrf_token %}
+                        <div class="form-group">
+                            <label for="enviromentcateid" class="create" >Môi trường*</label> 
+                            <input type="text" list="enviromentcatelist" name="enviromentcateid" autocomplete="off" class="form-control" style="width:30%;" required="required"/>
+                            <datalist id="enviromentcatelist">
+                            {% for enviromentcate in enviromentcates  %}
+                              <option value="{{ enviromentcate.enviromentcateid }}">{{ enviromentcate.enviromentcatename }}</option>
+                            {% endfor %}
+                            </datalist>
+
+							<label for="subjectid" class="create" >Khóa học*</label> 
+                            <input type="text" list="subjectlist" name="subjectid" autocomplete="off" class="form-control" style="width:30%;" required="required"/>
+                            <datalist id="subjectlist">
+							<option value="0">Không thuộc khóa học nào</option>
+                            {% for subject in subjects  %}
+                              <option value="{{ subject.subjectid }}">{{ subject.subjectname }}</option>
+                            {% endfor %}
+                            </datalist>
+
+                            <label for="forumtopicname" class="create">Tên chủ đề*</label> 
+                            <input type="text" name="forumtopicname" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                            <label for="description" class="create">Mô tả ngắn*</label> 
+                            <input type="text" name="description" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                            <label for="content" class="create">Nội dung*</label> 
+                            <textarea style="width:200px"  id="id_description" name="content"  data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: null, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserImageBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;filebrowserImageUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_description" data-type="ckeditortype"></textarea>
+                            <label for="avatar" class="create">Ảnh đại diện*</label> 
+                            <br>
+                            <label id="butavar" type="file" for="upload" class="btn_1 rounded " style="width: auto;background-color: #3f9fff">Chọn Ảnh </label>	
+                            <input id="upload" name="avatar" type="file" style="display:none" required="required">
+                            <br>
+                            <label for="note" class="create">Ghi chú</label>
+                            <input type="text" name="note" autocomplete = "off"  class="form-control" style="width:30%;"/>
+                            <br>
+                            <div style="width:100%;" align="center">
+                              <button  type="submit" class="btn_1 rounded"><span class="glyphicon glyphicon-plus"></span> Thêm</button>
+                      		</div>  
+					  </div>
+					</form>
+					</div>
+					<!-- /single-post -->
+
+				
+					<hr>
+
+					
+				</div>
+				<!-- /col -->
+
+				
+				<!-- /aside -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+
+		<script>
+        $("#upload").change(function(){
+            var filename = $('input[type=file]').val().split('\\').pop();
+            filename= "Tên ảnh: ("+filename+")"
+			$("#butavar").html(filename);
+			$("#upimg").css({"display":""});
+        })
+    </script>
+
+	{% endblock %}
+	<!--/main-->
+	

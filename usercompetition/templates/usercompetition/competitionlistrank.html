@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Udema a modern educational site template">
+    <meta name="author" content="Ansonika">
+    <title>VS-PRO | Visual Programming Learning</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+    
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'homepage/css/blog.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+ 	
+
+</head>
+
+<body >
+	
+	<div id="page" >
+		
+	<header class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+					<li><span><a href="#0">Giới Thiệu</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+							<li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+							<li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+							<li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+							{% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Tynker</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 1 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Alice3D</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 2 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+						<li><span><a href="#0">Arduino</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'course:userforumcourse' 3 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							<li><a href="{% url 'homepage:resource' %}"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+							
+						</ul>
+					</li>
+					<li><span><a href="#0">Khóa Học</a></span>
+						<ul>
+							<li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+							<li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+							<li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+							<li><a href="{% url 'course:showsubjectcate2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+						</ul>
+					</li>
+					
+					<li><span><a href="#0">Cuộc Thi</a></span>
+						<ul>
+							{% comment %} <li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li> {% endcomment %}
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+							<li><a href="{% url 'usercompetition:listcompetition2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỏi Đáp</a></span>
+						<ul>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fa fa-file-alt" style="font-size:14pt"></i>&nbsp  Dự Án Chia Sẻ</a></li>
+							<li><a href="{% url 'userforum:userforum' %}"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+							<li><a href="{% url 'userforum:fastchat' %}"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỗ Trợ</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:sitemap' %}"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+							<li><a href="{% url 'homepage:userguide' %}"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+							<li><a href="{% url 'homepage:contact' %}"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+						</ul>
+					</li>
+					
+					{% if islog == 1 %}
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+						</ul>
+					</li>
+					{% endif  %}
+					{% if islog == 0 %}
+					<li><span><a href="{% url 'homepage:login' %}">Đăng Nhập</a></span>
+						
+					</li>
+					{% endif %}
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q"searchform" method="get" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+	<!-- /header -->
+	
+	<main>
+		<section id="hero_in" class="general" style="background:url(data:image/jpeg;base64,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) no-repeat;background-size: contain;background-position:center;">
+			<div class="wrapper">
+				<div class="container" >
+					<h1 class="fadeInUp"><span></span>Bảng Xếp Hạng</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<div class="container margin_60_35"  >
+			<div class="row" >
+				
+				<!-- /col -->
+
+			<div class="col-lg-12" style="padding-left:10%;padding-right:10%" >
+				<div class="bloglist singlepost" >
+					<!-- /widget -->
+					<div class="widget">
+						<div class="widget-title" align="center">
+							<h3 style="color:#662d91"><i class="icon-king" style="font-size: 38px; color:yellow"></i>Danh Hiệu</h4>
+						</div>
+						<ul class="comments-list"  style="padding-left:35%;padding-right:35%">
+							{% for rank in listresult %}
+							<li>
+								{% if rank.rankorder <= 5 %}
+									{% for urank in userrank %}
+										{% if rank.rankorder == urank.requiredlevel %}
+											<div class="alignleft">
+												<a href="#0"><img src="{{urank.icon}}" style="border-radius: 50%;" alt=""></a>
+											</div>
+										<small>{{urank.userrankname}}</small>
+										{% endif %}
+									{% endfor %}
+								{% else %}
+									<div class="alignleft">
+										<a href="#0"><img src="{{userrank5.icon}}" style="border-radius: 50%;" alt=""></a>
+									</div>
+									<small>{{userrank5.userrankname}}</small>
+								{% endif %}				
+								<h3><a href="#" title="">{{rank.classrankcom.comsubmit.accountid.username.upper}}</a></h3>
+							</li>
+							{% endfor %}
+						</ul>
+						</div>
+					
+				{% if numpage > 10 %}
+				<div class="pagination">
+	
+						<span class="step-links">
+							{% if listresult.has_previous %}
+								<a  href="?page=1">&laquo; Trang đầu</a>
+								<a  href="?page={{ listresult.previous_page_number }}">Trang trước</a>
+							{% endif %}
+
+							<span class="current">
+								Page {{ listresult.number }} of {{ listresult.paginator.num_pages }}
+							</span>
+
+							{% if listresult.has_next %}
+								<a  href="?page={{ listresult.next_page_number }}">Trang kế</a>
+								<a  href="?page={{ listresult.paginator.num_pages }}">Trang cuối &raquo;</a>
+							{% endif %}
+						</span>
+					
+					</div>
+				
+				{% endif %}	
+					
+					<!-- /widget -->
+					
+					<!-- /widget -->
+					
+					<!-- /widget -->
+					</div>
+			</div>
+			<div class="col-lg-12" style="padding-left:10%;padding-right:10%" >
+				<div class="bloglist singlepost" >
+					<div class="widget-title" align="center">
+							<h3 style="color:#662d91"><i class="icon-king" style="font-size: 38px; color:yellow"></i>Xếp Hạng Của Bạn</h4>
+						</div>
+
+					<ul class="comments-list"  style="padding-left:35%;padding-right:35%">
+							{% for rank in listresult %}
+							{% if rank.classrankcom.comsubmit.accountid.username == account.username %}
+								<li>
+								{% if rank.rankorder <= 5 %}
+									{% for urank in userrank %}
+										{% if rank.rankorder == urank.requiredlevel %}
+											<div class="alignleft">
+												<a href="#0"><img src="{{urank.icon}}" style="border-radius: 50%;" alt=""></a>
+											</div>
+										<small>{{urank.userrankname}}</small>
+										{% endif %}
+									{% endfor %}
+								{% else %}
+									<div class="alignleft">
+										<a href="#0"><img src="{{userrank5.icon}}" style="border-radius: 50%;" alt=""></a>
+									</div>
+									<small>{{userrank5.userrankname}}</small>
+								{% endif %}				
+								<h3><a href="#" title="">{{rank.classrankcom.comsubmit.accountid.username.upper}}</a></h3>
+							</li>
+							{% endif %}
+							
+							{% endfor %}
+						</ul>
+				</div >
+			</div>
+				<!-- /aside -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</main>
+	<!--/main-->
+	
+	<footer>
+		<div class="container margin_120_95">
+			<br><br><br>
+			<div class="row">
+				<div class="col-lg-5 col-md-12 p-r-5">
+					<p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+					<p>VS-Pro là một trang Web học tập STEM trực tuyến không nhằm mục đích thương mại, là một đồ án khóa luận tốt nghiệp của sinh viên Đại Học Sư Phạm thành phố Hồ Chí Minh.<br> Giáo dục là động lực phát triển của nền văn minh nhân loại, Giáo dục thì cần được phát triển có hệ thống và cần được cung cấp miễn phí. </p>
+					<div class="follow_us">
+						<ul>
+							<li>Mạng Xã Hội</li>
+							<li><a href="#0"><i class="ti-facebook"></i></a></li>
+							
+							<li><a href="#0"><i class="ti-google"></i></a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ml-lg-auto">
+					<h5>Liên Kết Nhanh</h5>
+					<ul class="links">
+						<li><a href="{% url 'homepage:introduction' %}">Tổng Quan</a></li>
+						<li><a href="{% url 'homepage:aboutus' %}">Về Chúng Tôi</a></li>
+						<li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+						<li><a href="#0">Tin tức</a></li>
+						<li><a href="#0">Liên Lạc</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Liên hệ</h5>
+					<ul class="contacts">
+						<li><a href="tel://61280932400"><i class="ti-mobile"></i>0799 533166 - 0933 603326</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-email"></i>vsprodhsp@gmail.com</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-location-pin"></i>Trung Tâm Tin Học 280 An Dương Vương, P4, Q5, TP HCM</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<div class="col-md-8">
+					<ul id="additional_links">
+						{% comment %} <li><a href="#0">Terms and conditions</a></li>
+						<li><a href="#0">Privacy</a></li> {% endcomment %}
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div id="copy">©2019 VS-PRO</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/footer-->
+	</div>
+	<!-- page -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'homepage/js/common_scripts.js' %}"></script>
+    <script src="{% static 'homepage/js/main.js' %}"></script>
+	<script src="{% static 'homepage/assets/validate.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="mIIIspiiDpZIo" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+		<lom:lom>
+			<lom:general>
+				<lom:title>
+					<lom:langstring>PHUTHUYTHOIGIAN</lom:langstring>
+				</lom:title>
+			</lom:general>
+			<lom:educational>
+				<lom:typicallearningtime>
+				<lom:datetime>01:00:00</lom:datetime>
+				</lom:typicallearningtime>
+			</lom:educational>
+		</lom:lom>
+	</metadata>
+	<organizations default="phuthuythoigian_organization">
+		<organization identifier="phuthuythoigian_organization">
+
+			<title>PHUTHUYTHOIGIAN</title>
+			<item identifier="CFD85683-8097-452C-ADA0-97F9F790E382" identifierref="resource">
+				<title>Untitled Quiz</title>
+			</item>
+		</organization>
+	</organizations>
+	<resources>
+		<resource identifier="resource" type="webcontent" adlcp:scormtype="sco" href="res/index.html">
+			<file href="res/data/apple-touch-icon.png"/>
+<file href="res/data/browsersupport.js"/>
+<file href="res/data/favicon.ico"/>
+<file href="res/data/fonts/fnt0.woff"/>
+<file href="res/data/fonts/fnt1.woff"/>
+<file href="res/data/fonts/fnt2.woff"/>
+<file href="res/data/fonts/fnt3.woff"/>
+<file href="res/data/fonts/fnt4.woff"/>
+<file href="res/data/fonts/fnt5.woff"/>
+<file href="res/data/fonts/fnt6.woff"/>
+<file href="res/data/fonts/fnt7.woff"/>
+<file href="res/data/fonts/fnt8.woff"/>
+<file href="res/data/goodbye.html"/>
+<file href="res/data/html5-unsupported.html"/>
+<file href="res/data/html5.png"/>
+<file href="res/data/images/64c2-3176-1ea5-fc98.png"/>
+<file href="res/data/images/80fe-9468-21e6-b105.png"/>
+<file href="res/data/images/f124-ecee-45d7-75e1.png"/>
+<file href="res/data/images/f24b-75c8-c151-20b7.png"/>
+<file href="res/data/images/img-0cac3a0528cd3743c17e1e9dc95a6b69469d04e2.jpg"/>
+<file href="res/data/images/img-17f32adabdb36fff65f2535eb0f41489a0a3802f.png"/>
+<file href="res/data/images/img-20fcdcaa5b07edf07dfab6037a46b4c18a76fd6d.png"/>
+<file href="res/data/images/img-4d0cb55747aec9d34614d6476a6621c071890964.png"/>
+<file href="res/data/images/img-65287dfdca7d8cf3ef39355ca7c15d9d043a9dcb.png"/>
+<file href="res/data/images/img-68c760f9ae1c83858022b403f9c0975dfff9a1aa.png"/>
+<file href="res/data/images/img-7fc9aa14a5f0460f3d5a59adbc777884a7bd2c09.png"/>
+<file href="res/data/images/img-85665c412037ece071079da212ecc786eb02d14d.png"/>
+<file href="res/data/images/img-b6aa72f15969a02a4519919ae4fc9be7296ab770.jpg"/>
+<file href="res/data/images/img-e525bb03a8b4478c446e3fb880e8a00569c1d910.png"/>
+<file href="res/data/images/img-f77c8e1bc180b189adef175c9b2e7f5536db980b.jpg"/>
+<file href="res/data/images/img-f83799004cf70cbbb40b052c504f0a87bb46f411.jpg"/>
+<file href="res/data/images/img-fe24f53d9096e6f6a744583b6665cb9874bffb46.jpg"/>
+<file href="res/data/lms.js"/>
+<file href="res/data/player.js"/>
+<file href="res/data/videos/video-b6aa72f15969a02a4519919ae4fc9be7296ab770.mp4"/>
+<file href="res/index.html"/>
+
+		</resource>
+	</resources>
+</manifest>

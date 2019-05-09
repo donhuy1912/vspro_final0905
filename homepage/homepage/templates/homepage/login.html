@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Udema a modern educational site template">
+    <meta name="author" content="Ansonika">
+	<meta name="google-signin-client_id" content="554492845052-km4k68i2ool4siev6m1on0f5j0h6dcb9.apps.googleusercontent.com">
+	<meta name="google-signin-scope" content="profile email">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>	
+    <title>VS-PRO | Visual Programming Learning</title>
+    {% load static %}
+    <!-- Favicons-->
+	
+    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+	<script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=2418277208184359&autoLogAppEvents=1"></script>	
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+	
+
+</head>
+
+<body id="login_bg">
+	
+	<nav id="menu" class="fake_menu"></nav>
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div>
+	<!-- End Preload -->
+	
+	<div id="login">
+	
+		<aside style="margin-left: 550px;margin-right: 550px">
+			<figure>
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</figure>
+			  <form  method = "POST">
+			  {% csrf_token %}
+				<div class="access_social">
+					<meta name="google-signin-scope" content="profile email">
+					<meta name="google-signin-client_id" content="554492845052-km4k68i2ool4siev6m1on0f5j0h6dcb9.apps.googleusercontent.com">
+						<div align = "center">
+						<div class="g-signin2" data-onsuccess="onSignIn" data-width="310" data-height="40" data-longtitle="true"></div><br>
+					<!-- <div onlogin="checkLoginState();" class="fb-login-button" data-width="310" data-height="40" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+			
+					</div>
+					<div class="divider"><span>Hoặc</span></div>
+				<div class="form-group">
+					{% for message in messages %}
+					<div class="alert alert-success" style="color: #f8f9fa; background-color: #dc3545;">
+						<a class="close" data-dismiss="alert">×</a>
+							{{ message }}
+					</div>
+					{% endfor %}
+					<span class="input">
+					<input class="input_field" type="text" autocomplete="off" name="user">
+						<label class="input_label">
+						<span class="input__label-content">Tên đăng nhập</span>
+					</label>
+					</span>
+
+					<span class="input">
+					<input class="input_field" type="password" autocomplete="new-password" name="pass" id="password1">
+						<label class="input_label">
+						<span class="input__label-content">Mật khẩu</span>
+					</label>
+					</span>
+				<a  class="icon-eye-7" onclick="showpass()" id="show" style="display: show;font-size: 9pt;color:dodgerblue">Hiện mật khẩu</a>
+				<a  class="icon-eye-off-1" onclick="hidepass()" id="hide" style="display: none;font-size: 9pt;color:dodgerblue">Ẩn mật khẩu</a>
+				<br>
+				<script language="javascript">
+						var check = 0;
+						var pass = document.getElementById("password1");
+						var show=document.getElementById("show");
+						var hide=document.getElementById("hide");
+ 						function showpass(){
+							pass.type="text";
+							show.style.display = "none";
+							hide.style.display = "inline";
+						};
+						function hidepass(){
+							pass.type="password";
+							show.style.display = "inline";
+							hide.style.display = "none";
+						};
+				</script>
+				
+				</div>
+				<button type="submit" class="btn_1 rounded full-width add_top_60"> Đăng nhập </button>
+				<div class="text-center add_top_10">Bạn chưa có tài khoản? <strong><a href="{% url 'homepage:register' %}">Đăng Ký!</a></strong></div>
+				<small><a href="{% url 'homepage:forgotpass' %}" style="padding-left: 100px;font-size:9pt">Quên Mật Khẩu?</a></small>
+			</form>
+			<div class="copy">©2019</div>
+		</aside>
+	</div>
+	<!-- /login -->
+		
+	<!-- COMMON SCRIPTS -->
+    
+    <script src="{% static 'homepage/js/common_scripts.js' %}"></script>
+    <script src="{% static 'homepage/js/main.js' %}"></script>
+	<script src="{% static 'homepage/assets/validate.js' %}"></script>	
+<script>
+  function statusChangeCallback(response) {
+		if (response.status === 'connected'){
+			// testAPI();
+		}
+  }
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2418277208184359',
+      cookie     : true,          
+      xfbml      : true,  
+      version    : 'v3.2' 
+    });
+    FB.getLoginStatus(function(response){
+      statusChangeCallback(response);
+			});
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  function testAPI() {
+    FB.api('/me', function(response) {
+				var name = response.name;
+				var id = response.id;
+				
+				$.ajax({
+					url: '/ajax/loginfacebook/',
+					data: {
+						'id': id,
+						'name': name,
+					},
+					dataType: 'json',
+					success: function(data){
+						location.reload();
+						FB.logout(function() { window.location.reload() }); return false;
+					}
+				})
+    });
+  }
+
+</script>
+<script>
+		function onSignIn(googleUser) {
+  	var profile = googleUser.getBasicProfile();
+  		id= profile.getId(); 
+  		name=  profile.getName();
+  		ava= profile.getImageUrl();
+  		email=profile.getEmail();
+			logingmail(id,name,ava,email)
+	}	
+ 	function logingmail(id,name,ava,email)
+ 	{
+	$.ajax({
+			url: '/ajax/logingmail/',
+			data: {
+				'id':id,
+				'name':name,
+				'ava':ava,
+				'email':email
+				
+			},
+			dataType: 'json',
+			success: function(data){
+				signOut();
+				location.reload();
+			}
+		})
+ }
+</script>
+<script>
+	$(document).ready(function()
+	{
+		signOut()
+	})
+	function signOut() {
+	  var auth2 = gapi.auth2.getAuthInstance();
+	  auth2.signOut().then(function () {
+
+	  });
+	}
+</script>
+<script>
+	var googleUser = {};
+ function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          document.getElementById('name').innerText = "Signed in: " +
+              googleUser.getBasicProfile().getName();
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+	$(document).ready(function()
+	{
+		attachSignin(document.getElementById('customBtn'));
+		$('#editname').html('Đăng nhập qua Google')
+	})
+
+</script>
+
+
+</body>
+</html>

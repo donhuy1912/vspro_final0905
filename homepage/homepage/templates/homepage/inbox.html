@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Quản Lí Tin Nhắn </title>
+    <script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'homepage/js/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <link href="{% static 'homepage/css/bootstrap1.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'homepage/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{% static 'homepage/css/nprogress.css' %}" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="{% static 'homepage/css/prettify.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styling plus plugins -->
+    <link href="{% static 'homepage/css/custom.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'homepage/css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all"/>
+	  <script src="{% static 'homepage/js/jquery.magnific-popup.js' %}" type="text/javascript"></script>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+         <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="{% url 'adminpage:adminpage' %}" class="site_title"><i class="fa fa-book"></i> <span>VSPRO Admin
+              </span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="{{account.avatar}}" alt="..." class="img-circle profile_img" style="width: 75px;height:75px">
+              </div>
+              <div class="profile_info">
+                <span>xin chào</span>
+                <h2>{{userdetail.firstname}}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>Quản lí các bảng </h3>
+                <ul class="nav side-menu">
+                  
+                  <li><a><i class="fa fa-table"></i> Các bảng <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <!-- <li><a href="/tables/">Tables</a></li>
+                      <li><a href="/tables_dynamic/">Table Dynamic</a></li> -->
+                      <li><a href="{% url 'adminintroduction:index' %}">Introduction</a></li>
+                      <li><a href="{% url 'adminheader:index' %}">Header</a></li>
+                      <li><a href="{% url 'adminfooter:index' %}">Footer</a></li>
+                      <li><a href="{% url 'adminhome:index' %}">Home</a></li>
+                      <li><a href="{% url 'adminsliderunbar:index' %}">SlideRunBar</a></li>
+                      <li><a href="{% url 'adminaccounttype:index' %}">AccountType</a></li>
+                      <li><a href="{% url 'adminaccount:index' %}">Account</a></li>
+                      <li><a href="{% url 'adminuserdetail:index' %}">UserDetail</a></li>
+                      <li><a href="{% url 'adminenviromentcate:index' %}">EnviromentCate</a></li>
+                      <li><a href="{% url 'adminsubject:index' %}">Subject</a></li>
+                      <li><a href="{% url 'adminsubjectteacher:index' %}">SubjectTeacher</a></li>
+                      <li><a href="{% url 'adminsubjectpart:index' %}">SubjectPart</a></li>
+                      <li><a href="{% url 'adminchapter:index' %}">Chapter</a></li>
+                      <li><a href="{% url 'adminlesson:index' %}">Lesson</a></li>
+                      <li><a href="{% url 'adminitem:index' %}">Item</a></li>
+                      <li><a href="{% url 'adminactivitytype:index' %}">ActivityType</a></li>
+                      <li><a href="{% url 'adminactivity:index' %}">Activity</a></li>
+                      <li><a href="{% url 'adminactivitysubmittion:index' %}">ActivitySubmittion</a></li>
+                      <li><a href="{% url 'adminforum:index' %}">Forum</a></li>
+                      <li><a href="{% url 'adminprojectshare:index' %}">ProjectShare</a></li>
+                      <li><a href="{% url 'adminnews:index' %}">News</a></li>
+                      <li><a href="{% url 'admincompetition:index' %}">Competition</a></li>
+                      <li><a href="{% url 'admincompetitionsubmittion:index' %}">CompetitionSubmittion</a></li>
+                      <li><a href="{% url 'adminenrollment:index' %}">Enrollment</a></li>
+                      <li><a href="{% url 'adminsubjectlike:index' %}">SubjectLike</a></li>
+                      <li><a href="{% url 'adminlessonreply:index' %}">LessonReply</a></li>
+                      <li><a href="{% url 'adminactivityreply:index' %}">ActivityReply</a></li>
+                      <li><a href="{% url 'adminactivitysubmittionreply:index' %}">ActivitySubmittionReply</a></li>
+                      <li><a href="{% url 'admintracking:index' %}">Tracking</a></li>
+                      <li><a href="{% url 'adminforumlike:index' %}">ForumLike</a></li>
+                      <li><a href="{% url 'adminforumreply:index' %}">ForumReply</a></li>
+                      <li><a href="{% url 'adminnewsreply:index' %}">NewsReply</a></li>
+                      <li><a href="{% url 'adminprojectsharelike:index' %}">ProjectshareLike</a></li>
+                      <li><a href="{% url 'adminprojectsharereply:index' %}">ProjectshareReply</a></li>
+                      <li><a href="{% url 'admincompetitionsubmittionlike:index' %}">CompetitionSubmittionLike</a></li>
+                      <li><a href="{% url 'admincompetitionsubmittionreply:index' %}">CompetitionSubmittionReply</a></li>
+                      <li><a href="{% url 'adminuserrank:index' %}">UserRank</a></li>
+                      <li><a href="{% url 'admincontact:index' %}">Contact</a></li>
+                      <li><a href="{% url 'adminfastchat:index' %}">FastChat</a></li>
+                      <li><a href="{% url 'admingametype:index' %}">GameType</a></li>
+                      <li><a href="{% url 'admingame:index' %}">Game</a></li>
+                      <li><a href="{% url 'admingamerate:index' %}">GameRate</a></li>
+                      <!-- <li><a href="/tables_additional/">Table Additional</a></li> -->
+                    </ul>
+                  </li>
+                  <!-- <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/chartjs/">Chart JS</a></li>
+                      <li><a href="/chartjs2/">Chart JS2</a></li>
+                      <li><a href="/morisjs/">Moris JS</a></li>
+                      <li><a href="/echarts/">ECharts</a></li>
+                      <li><a href="/other_charts/">Other Charts</a></li>
+                    </ul>
+                  </li> -->
+                  <!-- <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/fixed_sidebar/">Fixed Sidebar</a></li>
+                      <li><a href="/fixed_footer/">Fixed Footer</a></li>
+                    </ul>
+                  </li> -->
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Dịch Vụ</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-windows"></i> Trang Mở Rộng<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    
+                      <li><a href="/adminchat/">Chat</a></li>
+                    </ul>
+                  </li>
+                  <!-- <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/page_403/">403 Error</a></li>
+                      <li><a href="/page_404/">404 Error</a></li>
+                      <li><a href="/page_500/">500 Error</a></li>
+                      <li><a href="/plain_page/">Plain Page</a></li>
+                      <li><a href="/login/">Login Page</a></li>
+                      <li><a href="/pricing_tables/">Pricing Tables</a></li>
+                    </ul>
+                  </li> -->
+                  <!-- <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level1_1">Level One</a>
+                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="/level2/">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#level1_2">Level One</a>
+                        </li>
+                    </ul>
+                  </li>                   -->
+                  <!-- <li><a href="{% static 'adminpage/javascript:void(0)' %}'"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li> -->
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+             
+              <a data-toggle="tooltip" data-placement="top" title="Đăng Xuất" href="{% url 'homepage:logout' %}">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="{% url 'homepage:index' %}" class="user-profile dropdown-toggle" >
+                    Trang Chủ
+                    
+                  </a>
+                  
+                </li>
+
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Tin nhắn <small></small></h3>
+                <input id='idroom' value="0" style="display:none">
+                <input id='lastid' style="display:none">
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="row">
+                      <div class="col-sm-3 mail_list_column" style="height:500px;overflow-y: scroll;">
+                          <div class="input-group">
+                              <input id='searoom' type="text" class="form-control" placeholder="tìm kiếm...">
+                              <span class="input-group-btn">
+                                {% comment %} <button class="btn btn-default" type="button"></button> {% endcomment %}
+                              </span>
+                            </div>
+
+                        
+                            <div id='lschatroom'>
+                               
+                              </div>
+                              
+                            
+                      
+                        
+                      </div>
+                      <!-- /MAIL LIST -->
+
+                      <!-- CONTENT MAIL -->
+                      <div class="col-sm-9 mail_view">
+                        <div class="inbox-body">
+                          <div class="mail_heading row">
+                            <div class="col-md-8">
+                              <div  class="btn-group">
+                                  <button  id="compose" class="btn btn-sm btn-primary" type="button"><i class="fa fa-reply"></i> Reply</button>
+                                  <div id="dombut" style="display:inline"> <button   class="btn btn-sm btn-primary" style="background-color:#ccccb3;border-color:#ccccb3" type="button" disabled><i class="fa fa-trash" ></i> Delete</button> </div>
+                                  
+                             </div>
+                            </div>
+                            <div class="col-md-4 text-right">
+                              
+                            </div>
+                            <div class="col-md-12">
+                              <h4> Hộp Thư</h4>
+                            </div>
+                          </div>
+                          <div id='mescontent' style="height:500px; overflow-y: scroll;overflow-x: none;">
+                             
+                        </div>
+                          <div class="btn-group">
+                           </div>
+                        </div>
+
+                      </div>
+                      <!-- /CONTENT MAIL -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+           
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- compose -->
+    <div class="compose col-md-6 col-xs-12">
+      <div class="compose-header">
+        New Message
+        <button type="button" class="close compose-close">
+          <span>×</span>
+        </button>
+      </div>
+
+      <div class="compose-body" style="height:100px">
+        <textarea id='contentmes' type="text" style="width:100%;height:100px"> </textarea>
+      </div>
+
+      <div class="compose-footer">
+        <button id="senmes" class="btn btn-sm btn-success" type="button">Send</button>
+        
+      </div>
+    </div>
+    <!-- /compose -->
+
+    <!-- jQuery -->
+    
+    <!-- Bootstrap -->
+    <script src="{% static 'homepage/js/bootstrap1.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'homepage/js/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'homepage/js/nprogress.js' %}"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="{% static 'homepage/js/bootstrap-wysiwyg.min.js' %}"></script>
+    <script src="{% static 'homepage/js/jquery.hotkeys.js' %}"></script>
+    <script src="{% static 'homepage/js/prettify.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'homepage/js/custom.min.js' %}"></script>
+    <script>
+      $(document).ready(function()
+      {
+        setInterval(getrooms,2000);
+        
+      })
+      function getrooms()
+		{
+      var searoom=$("#searoom").val();
+			$.ajax({
+					url: '/ajax/getallroomchat/',
+					data: {
+						'searoom':searoom,
+					},
+					dataType: 'json',
+					success: function (data) {
+            $('#lschatroom').html(data.s)
+					}
+					});
+
+		}
+    function loadallmess(){
+      var idroom=$('#idroom').val();
+      $.ajax({
+					url: '/ajax/getallmesadmin/',
+					data: {
+						'idroom':idroom,
+					},
+					dataType: 'json',
+					success: function (data) {
+						$('#mescontent').html(data.s);
+            $('#lastid').val(data.lastid);
+					}
+					});
+    }
+
+    function changeroom(id)
+    {
+      clearInterval(intermess);
+      $('#idroom').val(id);
+      $.ajax({
+        url: '/ajax/getroombutton/',
+        data: {
+          'idroom':id
+        },
+        dataType: 'json',
+        success: function(data){
+          $('#dombut').html(data.butt);
+        }
+      })
+      loadallmess();
+      var intermess= setInterval(requestmes,2000)
+
+    }
+
+    function requestmes()
+    {
+      lastid=$('#lastid').val();
+      idroom=$('#idroom').val();
+      $.ajax({
+					url: '/ajax/getmesadmin/',
+					data: {
+						'lastid':lastid,
+            'idroom':idroom,
+					},
+					dataType: 'json',
+					success: function (data) {
+						mess = $('#mescontent').html();
+          	$('#mescontent').html(mess+ data.s);
+            $('#lastid').val(data.lastid);	
+					}
+					});
+    }
+
+    $('#senmes').click(function(){
+			idroom=$('#idroom').val();
+      content= $('#contentmes').val();
+      if (content != "")
+			{
+				$.ajax({
+				url: '/ajax/sentmesadmin/',
+				data: {
+					'content': content,
+          'idroom':idroom
+				},
+				dataType: 'json',
+				success: function (data) {
+					$("#contentmes").val('');
+					$('#mescontent').animate({
+					scrollTop: $('#mescontent').get(0).scrollHeight
+				}, 2000);
+
+				}
+				});
+			}
+       
+      })
+    </script>
+
+<!-- SPECIFIC SCRIPTS -->
+	<script src="{% static 'homepage/js/modernizr_tables.js' %}"></script>
+	<script src="{% static 'homepage/js/tables_func.js' %}"></script>
+	<div id="rrr" class="mfp-hide" style="margin-left:25%;margin-right:25%;background:white" align="center">
+					<div style="padding-top:20px;padding-bottom:20px;">
+						<h3 id="popalert" style="color: #990099;padding-left: 0.1%;font-family:Arial">Bạn Có Muốn Xóa Không?</h3><br>							
+						<input  style="display:none" value=0 id="idroom3">
+						<button id="delmes"   class="btn-sm btn-primary">Xác Nhận</button>					
+						<button id="closepop"  class="btn-sm btn-primary" >Hủy</button>	
+					</div>
+				</div>
+	<script>
+		function openpop(idroom){
+		
+						$("#idroom3").val(idroom);
+						$.magnificPopup.open({
+  						items: {
+    					src: '#rrr'
+ 							},
+						closeBtnInside: false,
+  						type: 'inline'
+						});
+					}
+	</script>
+<script>
+					$('#closepop').click(function()
+						{
+							$.magnificPopup.close();
+						})
+</script>
+    
+ <script>
+    $('#delmes').click( function(){
+      $.ajax({
+        url: '/ajax/delmesadmin',
+        data: {
+          'idroom': idroom
+        },
+        dataType: 'json',
+        success: function(data){
+          $('#mescontent').html("");
+           $.magnificPopup.close();
+        }
+      })
+    })
+ </script>
+
+
+  </body>
+</html>

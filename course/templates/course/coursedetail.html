@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Udema a modern educational site template">
+    <meta name="author" content="Ansonika">
+    {% load static %}
+	<title>VS-PRO | Visual Programming Learning</title>
+
+	<!-- Favicons-->
+	<link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+	<!-- BASE CSS -->
+	<link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+	<link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+
+	<!-- YOUR CUSTOM CSS -->
+	<link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+	<script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+	<script type="text/javascript" src="{% static 'homepage/js/modernizr.custom.53451.js' %}"></script>  
+	<link href="{% static 'homepage/css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all"/>
+	<script src="{% static 'homepage/js/jquery.magnific-popup.js' %}" type="text/javascript"></script>
+
+</head>
+
+<body>
+	
+	<div id="page" class="theia-exception">
+		
+		<header class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+						<li><span><a href="#0">Giới Thiệu</a></span>
+							<ul>
+								<li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+								<li><a href="{% url 'usernews:usernews' %}"><i class="fa fa-newspaper-o" style="font-size:14pt"></i>&nbsp&nbsp Tin Tức</a></li>
+								<li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+								<li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+								<li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+								{% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+							</ul>
+						</li>
+	
+						<li><span><a href="#0">Tynker</a></span>
+							<ul>
+								<li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+								<li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+								<li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+								<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+								<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+								<li><a href="{% url 'course:userforumcourse' 1 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+								
+							</ul>
+						</li>
+	
+						<li><span><a href="#0">Alice3D</a></span>
+							<ul>
+								<li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+								<li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+								<li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+								<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+								<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+								<li><a href="{% url 'course:userforumcourse' 2 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+								
+							</ul>
+						</li>
+	
+						<li><span><a href="#0">Arduino</a></span>
+							<ul>
+								<li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+								<li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+								<li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+								<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+								<li><a href="{% url 'course:userforumcourse' 3 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+								<li><a href="{% url 'homepage:resource' %}"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+								
+							</ul>
+						</li>
+						<li><span><a href="#0">Khóa Học</a></span>
+							<ul>
+								<li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+								<li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+								<li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+								<li><a href="{% url 'course:showsubjectcate2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+							</ul>
+						</li>
+						
+						<li><span><a href="#0">Cuộc Thi</a></span>
+							<ul>
+								{% comment %} <li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li> {% endcomment %}
+								<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+								<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+								<li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+								<li><a href="{% url 'usercompetition:listcompetition2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+							</ul>
+						</li>
+	
+						<li><span><a href="#0">Hỏi Đáp</a></span>
+							<ul>
+								<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fa fa-file-alt" style="font-size:14pt"></i>&nbsp  Dự Án Chia Sẻ</a></li>
+								<li><a href="{% url 'userforum:userforum' %}"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+								<li><a href="{% url 'userforum:fastchat' %}"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+							</ul>
+						</li>
+	
+						<li><span><a href="#0">Hỗ Trợ</a></span>
+							<ul>
+								<li><a href="{% url 'homepage:sitemap' %}"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+								<li><a href="{% url 'homepage:userguide' %}"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+								<li><a href="{% url 'homepage:contact' %}"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+							</ul>
+						</li>
+					{% if button == 2 or button == 1 %}
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px; height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+						</ul>
+					</li>
+					{% endif %}
+					{% if button == 0 %}
+					<li><span><a href="{% url 'homepage:login' %}">Đăng nhập</a></span>
+						{% comment %} <ul>
+							<li><a href="{% url 'homepage:login' %}">Đăng Nhập</a></li>
+							<li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+						</ul> {% endcomment %}
+					</li>
+					{% endif %}
+
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+		<!-- /header -->
+
+		<main>
+			<section id="hero_in" class="courses" style="background: url({{subject.avatar}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+				<div class="wrapper">
+					<div class="container">
+						<h1 class="fadeInUp"><span></span>{{subject.subjectname}}</h1>
+					</div>
+				</div>
+			</section>
+			<!--/hero_in-->
+
+			<div class="bg_color_1">
+				<nav class="secondary_nav sticky_horizontal">
+					<div class="container">
+						<ul class="clearfix">
+							<li><a href="#description" class="active">Mô Tả</a></li>
+							<li><a href="#lessons">Nội Dung</a></li>
+							<li><a href="#reviews">Đánh giá</a></li> 
+						</ul>
+					</div>
+				</nav>
+				<div class="container margin_60_35">
+					<div class="row">
+						<div class="col-lg-8">
+
+							<section id="description">
+								<div class="box_highlight">
+									<ul class="additional_info">
+										<li><i class="pe-7s-timer"></i>Thời Lượng<strong>{{timeSubject1}}</strong></li>
+										<li><i class="pe-7s-date"></i>Ngày Phát Hành<strong>{{subject.createdate.day}}/{{subject.createdate.month}}/{{subject.createdate.year}}</strong></li>
+										<li><i class="pe-7s-wallet"></i>Đăng kí<strong>{{countEnroll}}</strong></li>
+									</ul>
+								</div>
+								<h2 style="font-family:Arial">Mô Tả</h2>
+								{{subject.content | safe}}
+								
+							</section>
+							<!-- /section -->
+
+							<section id="lessons">
+								<div class="intro_title">
+									<h2 style="font-family:Arial">Nội Dung</h2>
+									<ul>
+										<li>{{numChapter}} bài/ {{countlesson}}</li>
+										<li>{{timeSubject2}}</li>
+									</ul>
+								</div>
+								<div id="accordion_lessons" role="tablist" class="add_bottom_45">
+									<div class="card">
+										<div class="card-header" role="tab" id="headingOne">
+											<h5 class="mb-0">
+												<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="indicator ti-minus"></i>Thông tin từng bài:</a>
+											</h5>
+										</div>
+
+										<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion_lessons">
+											<div class="card-body">
+												<div class="list_lessons">
+													<ul>
+														{% for timename in arrTimeName %}
+															<li>{{timename.name}}<span>{{timename.time2}}</span></li>
+														{% endfor %}
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<!-- /accordion -->
+							</section>
+							<!-- /section -->
+
+							<section id="reviews">
+								<h2>ĐÁNH GIÁ </h2>
+								<div class="reviews-container">
+									<div class="row">
+										<div class="col-lg-3">
+											<div id="review_summary">
+												<strong>{{rateDetail.sumavg}}</strong>
+												<div class="rating">
+													{% for j in '01234' %}
+													{% if j|add:"0" < rateDetail.sumavg|add:"0" %}
+														<i class="icon_star voted"></i>
+													{% else %}
+														<i class="icon_star"></i>
+													{% endif %}
+													{% endfor %}
+												</div>
+												<small>Dựa trên {{rateDetail.sum}} học viên</small>
+											</div>
+										</div>
+										<div class="col-lg-9">
+											<div class="row">
+												<div class="col-lg-10 col-9">
+													<div class="progress">
+														<div id="star5" class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</div>
+												<div class="col-lg-2 col-3"><small><strong>5 stars ({{rateDetail.star5}})</strong></small></div>
+											</div>
+											<!-- /row -->
+											<div class="row">
+												<div class="col-lg-10 col-9">
+													<div class="progress">
+														<div id="star4" class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</div>
+												<div class="col-lg-2 col-3"><small><strong>4 stars ({{rateDetail.star4}})</strong></small></div>
+											</div>
+											<!-- /row -->
+											<div class="row">
+												<div class="col-lg-10 col-9">
+													<div class="progress">
+														<div id="star3" class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</div>
+												<div class="col-lg-2 col-3"><small><strong>3 stars ({{rateDetail.star3}})</strong></small></div>
+											</div>
+											<!-- /row -->
+											<div class="row">
+												<div class="col-lg-10 col-9">
+													<div class="progress">
+														<div id="star2" class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</div>
+												<div class="col-lg-2 col-3"><small><strong>2 stars ({{rateDetail.star2}})</strong></small></div>
+											</div>
+											<!-- /row -->
+											<div class="row">
+												<div class="col-lg-10 col-9">
+													<div class="progress">
+														 <div id="star1" class="progress-bar" role="progressbar" style="width: 0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+												</div>
+												<div class="col-lg-2 col-3"><small><strong> 1 stars ({{rateDetail.star1}})</strong></small></div>
+											</div>
+											<!-- /row -->
+										</div>
+									</div>
+									<!-- /row -->
+								</div>
+								<input id="per1" style="display:none" value={{rateDetail.perstar1}}>
+								<input id="per2" style="display:none" value={{rateDetail.perstar2}}>
+								<input id="per3" style="display:none" value={{rateDetail.perstar3}}>
+								<input id="per4" style="display:none" value={{rateDetail.perstar4}}>
+								<input id="per5" style="display:none" value={{rateDetail.perstar5}}>
+								<hr>
+								<script type="text/javascript">
+									$("#dock").ready(function(){
+										var per1= $("#per1").val()+"%";
+										var per2= $("#per2").val()+"%";
+										var per3= $("#per3").val()+"%";
+										var per4= $("#per4").val()+"%";
+										var per5= $("#per5").val()+"%";
+										
+										var star1 = $("#star1");
+										var star2 = $("#star2");
+										var star3 = $("#star3");
+										var star4 = $("#star4");
+										var star5 = $("#star5");
+										star1.css({"width":per1});
+										star2.css({"width":per2});
+										star3.css({"width":per3});
+										star4.css({"width":per4});
+										star5.css({"width":per5});
+								
+									})
+								</script>
+								<div class="reviews-container" id="dock">
+									{% for newc  in newcmt  %}
+									<div class="review-box clearfix">
+										<figure class="rev-thumb"><img src="{{ newc.avatar }}" alt="">
+										</figure>
+										<div class="rev-content">
+											<div class="rating">
+												{% for j in '01234' %}
+													{% if j|add:"0" < newc.rate|add:"0" %}
+														<i class="icon_star voted"></i>
+													{% else %}
+														<i class="icon_star"></i>
+													{% endif %}
+												{% endfor %}
+											</div>
+											<div class="rev-info">
+												{{newc.username}} – {{newc.date}}:
+											</div>
+											<div class="rev-text">
+												{{newc.content|safe}}
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+									
+									<!-- /review-box -->
+								</div>
+								<!-- /review-container -->
+							</section>
+							<section id="teachers">
+								<div class="intro_title">
+									<h2>Giảng viên</h2>
+								</div>
+								{% comment %} <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p> {% endcomment %}
+								<div class="row add_top_20 add_bottom_30">
+									<div class="col-lg-6">
+										<ul class="list_teachers">
+											{% for teacher in teachers %}
+											<li>
+													<a href="{% url 'homepage:userprofile' teacher.account.accountid %}">
+														<figure><img src="{{teacher.avatar}}" alt=""></figure>
+														<h5>{{teacher.name}}</h5>
+														<p>Giảng viên</p><i class="pe-7s-angle-right-circle"></i></a>
+											</li>
+											{% endfor %}
+													
+										</ul>
+									</div>
+							
+								</div>
+														<!-- /row -->
+													</section>
+													<!-- /section -->
+												</div>
+												<!-- /col -->
+
+												<aside class="col-lg-4" id="sidebar">
+													<div class="box_detail">
+														
+														<div class="watch-video">
+															<div class="container">
+																<div class="watch-video-main">
+																	<div class="video-bottom" align="center center">
+																		<a class="play-icon popup-with-zoom-anim" href="#small-dialog5"> <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"> 
+																		</span>
+
+																		<div align="center" style="width: 230px;height: 230px;"> 
+																				<span>Click xem video giới thiệu</span>
+																		<img src="{{subject.avatar}}" style="width: 230px;height: 150px">
+																		
+																		</div>
+																		</a>
+																		<!--video-->
+																		<div id="small-dialog5" class="mfp-hide">
+																			<iframe width="560" height="315" src="{{subject.introvideo}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+																		</div>
+																		<script>
+																			$(document).ready(function() {
+																				$('.popup-with-zoom-anim').magnificPopup({
+																					type: 'inline',
+																					fixedContentPos: false,
+																					fixedBgPos: true,
+																					overflowY: 'auto',
+																					closeBtnInside: true,
+																					preloader: false,
+																					midClick: true,
+																					removalDelay: 300,
+																					mainClass: 'my-mfp-zoom-in'
+																				});
+
+																			});
+																		</script>
+																	</div>	
+																</div>
+															</div>
+														</div>
+														<div class="price">
+															Free<span class="original_price"><em></em>Không tính phí</span>
+															<div class="review-box clearfix"></div>
+															{% if button == 1 %}
+																{% if like == 1  %}
+																	<a id="unlike"   class="btn_1 full-width" style="width:180px;height:40px;font-size:10pt;padding-left: 15px; color:white;"><i style="color:white" class="icon_like"></i>&nbspĐã&nbspthích&nbsp<i style="color:white" id="likecount1">&nbsp{{likeCount}}</i></a>
+																	<a id="like"  class="btn_1 full-width outline" style="width:150px;height:40px;font-size:10pt;padding-left: 15px;display:none" ><i class="icon_like" ></i>&nbspThích&nbsp<i id="likecount2">&nbsp{{likeCount}}</i></a>
+																{% endif %}
+																{% if like == 0 %}
+																	<a id = "unlike"   class="btn_1 full-width" style="width:180px;height:40px;font-size:10pt;padding-left: 15px;display:none;color:white;"><i style="color:white" class="icon_like"></i>&nbspĐã&nbspthích&nbsp<i style="color:white" id="likecount1">{{likeCount}}</i></a>
+																	<a id = "like" class="btn_1 full-width outline" style="width:150px;height:40px;font-size:10pt;padding-left: 15px;" ><i class="icon_like" ></i>&nbspThích&nbsp<i id="likecount2">{{likeCount}}</i></a>
+															{% endif %}
+
+															{% endif %}
+															
+														</div>
+														<!-- Token id -->
+														<input id="subjectid" style="display:none" value="{{ subject.subjectid }}">
+
+														<!-- AJAX Like -->
+														<script>
+															$("#unlike").click(function(){
+																var uli = $("#unlike");
+																var li = $("#like");
+																var lc1 = $("#likecount1");
+																var lc2 = $("#likecount2");
+																var subid = $("#subjectid").val();
+																$.ajax({
+																	url: '/ajax/ajaxunlike',
+																	data: {
+																		'subid': subid
+																	},
+																	dataType: 'json',
+																	success: function(data){
+																		uli.css({"display":"none"});
+																		li.css({"display":""});
+																		lc1.html(data.likecount);
+																		lc2.html(data.likecount);
+																	}
+																})
+																
+															});
+														</script>
+														<script>
+															$("#like").click(function(){
+																var uli = $("#unlike");
+																var li = $("#like");
+																var lc1 = $("#likecount1");
+																var lc2 = $("#likecount2");
+																var subid = $("#subjectid").val();
+
+																$.ajax({
+																	url: "/ajax/like",
+																	data:{
+																		"subid": subid
+																	},
+																	dataType: "json",
+																	success: function(data){
+																		uli.css({"display":""});
+																		li.css({"display":"none"});
+																		lc1.html(data.likecount);
+																		lc2.html(data.likecount);
+																	}
+																})
+																
+															});
+														</script>
+
+														{% if subject.isenable == 1  %}
+															{% if button == 0  %}
+															
+															<a href="{% url 'homepage:login' %}" class="btn_1 full-width">Bạn cần đăng nhập để tham gia</a>
+															{% endif %}
+															{% if button == 1 %}
+															
+															<a href="{% url 'course:coursepart' subject.subjectid %}" class="btn_1 full-width" >Vào Học</a>
+															{% endif %}
+															
+															{% if button == 2 %}
+															<a href="{% url 'course:enroll' subject.subjectid %}" class="btn_1 full-width outline"><i class="icon_heart"></i> Đăng kí học</a>
+															{% endif %}
+														{% else %}
+															<a  class="btn_1 full-width" style="color:white; background-color:red">Khóa học chưa công khai hoặc đã bị xóa</a>
+														{% endif %}
+															
+														<div id="list_feat">
+															<h3>Bao gồm</h3>
+															<ul>
+																<li><i class="icon_mobile"></i>Hỗ Trợ Điện Thoại</li>
+																<li><i class="icon_archive_alt"></i>Bài học chuẩn Scorm</li>
+																<li><i class="icon-video"></i>Hỗ Trợ Liên Lạc</li>
+																<li><i class="icon_chat_alt"></i>Hỗ trợ Trực Tuyến</li>
+																<li><i class="icon_document_alt"></i>Hỗ Trợ Đầy Đủ Nội Dung Bài Giảng</li>
+															</ul>
+														</div>
+													</div>
+												</aside>
+											</div>
+											<!-- /row -->
+										</div>
+										<!-- /container -->
+									</div>
+									<!-- /bg_color_1 -->
+								</main>
+								<!--/main-->
+
+								
+<footer>
+	<div class="container margin_120_95">
+		<div class="row">
+			<div class="col-lg-5 col-md-12 p-r-5">
+				<p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+				<p>VS-Pro là một trang Web học tập STEM trực tuyến không nhằm mục đích thương mại, là một đồ án khóa luận tốt nghiệp của sinh viên Đại Học Sư Phạm thành phố Hồ Chí Minh.<br> Giáo dục là động lực phát triển của nền văn minh nhân loại, Giáo dục thì cần được phát triển có hệ thống và cần được cung cấp miễn phí. </p>
+				<div class="follow_us">
+					<ul>
+						<li>Mạng Xã Hội</li>
+						<li><a href="#0"><i class="ti-facebook"></i></a></li>
+						
+						<li><a href="#0"><i class="ti-google"></i></a></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 ml-lg-auto">
+				<h5>Liên Kết Nhanh</h5>
+				<ul class="links">
+					<li><a href="{% url 'homepage:introduction' %}">Tổng Quan</a></li>
+					<li><a href="{% url 'homepage:aboutus' %}">Về Chúng Tôi</a></li>
+					<li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+					<li><a href="#0">Tin tức</a></li>
+					<li><a href="#0">Liên Lạc</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<h5>Liên hệ</h5>
+				<ul class="contacts">
+					<li><a href="tel://61280932400"><i class="ti-mobile"></i>0799 533166 - 0933 603326</a></li>
+					<li><a href="mailto:info@udema.com"><i class="ti-email"></i>vsprodhsp@gmail.com</a></li>
+					<li><a href="mailto:info@udema.com"><i class="ti-location-pin"></i>Trung Tâm Tin Học 280 An Dương Vương, P4, Q5, TP HCM</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		<!--/row-->
+		<hr>
+		<div class="row">
+			<div class="col-md-8">
+				<ul id="additional_links">
+					{% comment %} <li><a href="#0">Terms and conditions</a></li>
+					<li><a href="#0">Privacy</a></li> {% endcomment %}
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<div id="copy">©2019 VS-PRO</div>
+			</div>
+		</div>
+	</div>
+</footer>
+								<!--/footer-->
+							</div>
+							<!-- page -->
+
+							<!-- COMMON SCRIPTS -->
+							
+							
+							<script src="{% static 'homepage/js/main.js' %}"></script>
+							<script src="{% static 'homepage/assets/validate.js' %}"></script>
+
+
+						</body>
+						</html>

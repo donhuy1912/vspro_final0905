@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Udema a modern educational site template">
+    <meta name="author" content="Ansonika">
+    <title>VS-PRO | Visual Programming Learning</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/step-progress.min.css' %}" rel="stylesheet">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+
+	<script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+
+<style>
+.box_teacher:hover{
+    border-style: solid;
+    border-color: orange;
+}
+</style>
+</head>
+
+<body>
+	
+	<div id="page" class="theia-exception">
+		
+	<header class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+					<li><span><a href="#0">Giới Thiệu</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+							<li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+							<li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+							<li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+							{% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Tynker</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 1 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Alice3D</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 2 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Arduino</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'course:userforumcourse' 3 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							<li><a href="{% url 'homepage:resource' %}"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+							
+						</ul>
+					</li>
+					<li><span><a href="#0">Khóa Học</a></span>
+              <ul>
+                <li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+                <li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+                <li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+                <li><a href="{% url 'course:showsubjectcate2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+              </ul>
+            </li>
+            
+            <li><span><a href="#0">Cuộc Thi</a></span>
+              <ul>
+                {% comment %} <li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li> {% endcomment %}
+                <li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+                <li><a href="{% url 'usercompetition:listcompetition2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+              </ul>
+            </li>
+
+					<li><span><a href="#0">Hỏi Đáp</a></span>
+						<ul>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fa fa-file-alt" style="font-size:14pt"></i>&nbsp  Dự Án Chia Sẻ</a></li>
+							<li><a href="{% url 'userforum:userforum' %}"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+							<li><a href="{% url 'userforum:fastchat' %}"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỗ Trợ</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:sitemap' %}"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+							<li><a href="{% url 'homepage:userguide' %}"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+							<li><a href="{% url 'homepage:contact' %}"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+						</ul>
+					</li>
+					
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+							{% comment %} <li><a href="{% url 'course:mycourse' %}">Khóa Học Của Tôi</a></li>
+							<li><a href="{% url 'course:dashboard' %}">Hoạt Động Gần Đây</a></li>
+							<li><a href="{% url 'homepage:logout' %}">Đăng Xuất</a></li> {% endcomment %}
+						</ul>
+					</li>
+					
+
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+	<!-- /header -->
+	
+	<main>
+	
+		<section id="hero_in" class="general" style="background: url({{subject.avatar}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+	
+			<div class="wrapper">
+			<h1 class="fadeInUp"><p style="font-size: 40pt"><strong>{{subject.subjectname}}</strong></p><span></span></h1>
+				<div class="container"  align="center">
+					
+						<div class="progress" style="width:40%">
+							<div align="center"  class="progress-bar" role="progressbar"  style="{{percentSubhtml}};height:30px;background-color:#00e7ff;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+							<h6 style="font-size:12pt;padding-top:6px">{{percentSub}}%</h6>
+							</div>
+							</div>
+						</div>
+										
+				</div>
+			</div>
+		</section>
+		
+		<!--/hero_in-->
+		<div class="container margin_60_35">
+		
+			<div class="row">
+			
+				<aside class="col-lg-3" id="sidebar">
+					<div class="profile">
+						<figure><img src="{{rank.avatar}}" alt="Teacher" style="width:150px;height:150px;" class="rounded-circle"></figure>
+						<ul class="social_teacher">
+							
+						</ul>
+						<div class="row" align="center">
+												<div class="col-lg-10 col-9" style="width: 230px;padding-left: 30px;padding-right: 0px;">
+													<div class="progress" style="width:100%;" align="center">
+														<div id="star5" class="progress-bar" role="progressbar" style="{{level.expperleft}};background-color:#ffc107"  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+														</div>
+													</div>
+												</div>
+												
+												<div align="center" style="width:100%"><small><strong>{{ level.sumexp }} EXP</strong></small>
+												<img src="/media/thunder.png" style="width:15px;height:15px;">
+												</div>
+											</div>
+						<ul>
+							<li><strong style="color:#57488a">Tên</strong> <span class="float-right">{{userdetail.firstname}}</span> </li>
+							<li><strong style="color:#57488a">Cấp</strong> <span class="float-right">{{ level.level }}</span> </li>
+							<li><strong style="color:#57488a">Danh hiệu</strong> <span class="float-right">{{rank.name}}</span> </li>
+							<li><strong style="color:#57488a">Khóa học đăng kí</strong></strong> <span class="float-right">{{numEnroll}}</span></li>
+						</ul>
+					</div>
+				</aside>
+				<!--/aside -->
+
+				<div class="col-lg-9" >
+				{% for arr in arrClassChap %}
+				<a>
+				<div class="box_teacher">
+							<i class=""></i>
+							<div style="width:100%" align="center">
+							<h4 style="color:#480048;"><strong>BÀI {{arr.orderchap}}: {{arr.chapter.chaptername}}</strong></h4>
+							{% comment %} tien trinh mon {% endcomment %}
+							<div class="row" >
+												<div class="col-lg-9 col-8" style="padding-left:14%;">
+													<div class="progress" >
+														<div id="star5" class="progress-bar" role="progressbar" style="{{arr.percent}}" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-3 col-4" style="color:#007bff"><small><strong>({{arr.showpercent}}%)</strong>  </small>
+												</div> 
+											</div>
+							{% comment %} {% endcomment %}
+							</div>
+
+	
+							<br></br>
+							{% comment %} tien trinh bai {% endcomment %}
+							{% for ar in arr.lesson %}
+							<h6 style="color:#ff1a75;"><strong>CHỦ ĐỀ {{ar.orderlesson}}: {{ar.lesson.lessonname}}</strong></h6>
+							<div class="steps" id="stepstep">
+								<ul class="steps-container">
+								{% for a in ar.classacts %}
+									<a href="{% url 'course:courseactivity' idsub=subject.subjectid idchap=arr.chapter.chapterid idles=ar.lesson.lessonid iditem=a.activity.itemid.itemid idact=a.activity.activityid %}">
+									<li style="{{ar.devidepercent}}" class="{{a.checkpass}}">
+										<div class="step">
+											<div class="step-image"><span></span></div>
+											<div class="step-current" style="color:black">HĐ&nbsp{{a.order}}</div>
+										</div>
+									</li>
+									</a>
+								{% endfor %}
+								</ul>
+								<div class="step-bar" style="{{ar.sumpercent}}"></div>
+							</div>
+							{% endfor %}
+						{% comment %} <script>
+						$("#btn12").click(function()
+						{
+							$("#stepstep").slideUp();
+						})
+						</script> {% endcomment %}
+					</div>
+				</a>
+				{% endfor %}
+					
+				</div>
+				<!-- /col -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</main>
+	<!--/main-->
+	
+	<footer>
+		<div class="container margin_120_95">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 p-r-5">
+					<p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+					<p>VS-Pro là một trang Web học tập STEM trực tuyến không nhằm mục đích thương mại, là một đồ án khóa luận tốt nghiệp của sinh viên Đại Học Sư Phạm thành phố Hồ Chí Minh.<br> Giáo dục là động lực phát triển của nền văn minh nhân loại, Giáo dục thì cần được phát triển có hệ thống và cần được cung cấp miễn phí. </p>
+					<div class="follow_us">
+						<ul>
+							<li>Mạng Xã Hội</li>
+							<li><a href="#0"><i class="ti-facebook"></i></a></li>
+							
+							<li><a href="#0"><i class="ti-google"></i></a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ml-lg-auto">
+					<h5>Liên Kết Nhanh</h5>
+					<ul class="links">
+						<li><a href="{% url 'homepage:introduction' %}">Tổng Quan</a></li>
+						<li><a href="{% url 'homepage:aboutus' %}">Về Chúng Tôi</a></li>
+						<li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+						<li><a href="#0">Tin tức</a></li>
+						<li><a href="#0">Liên Lạc</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Liên hệ</h5>
+					<ul class="contacts">
+						<li><a href="tel://61280932400"><i class="ti-mobile"></i>0799 533166 - 0933 603326</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-email"></i>vsprodhsp@gmail.com</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-location-pin"></i>Trung Tâm Tin Học 280 An Dương Vương, P4, Q5, TP HCM</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<div class="col-md-8">
+					<ul id="additional_links">
+						{% comment %} <li><a href="#0">Terms and conditions</a></li>
+						<li><a href="#0">Privacy</a></li> {% endcomment %}
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div id="copy">©2019 VS-PRO</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/footer-->
+	</div>
+	<!-- page -->
+	
+	<!-- COMMON SCRIPTS -->
+    
+	<script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'homepage/js/common_scripts.js' %}"></script>
+    <script src="{% static 'homepage/js/main.js' %}"></script>
+	<script src="{% static 'homepage/assets/validate.js' %}"></script>
+</body>
+</html>

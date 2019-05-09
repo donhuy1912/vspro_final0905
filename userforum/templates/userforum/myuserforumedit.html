@@ -1,0 +1,115 @@
+{% extends "userforum/forumbaseprivate.html" %}
+{% load static %}
+
+	{% block main %}
+	
+	<main>
+		<section id="hero_in" class="general">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Chỉnh Sửa Bài Viết</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+	
+
+		<div class="container margin_60_35">
+		<div class="page-title">
+          <div class="title_left">
+            <h3 style="color: #ffc107;padding-left: 0.1%">Chỉnh sửa bài viết diễn đàn</h3>
+          </div>
+
+          
+        </div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="bloglist singlepost">
+					<form class="form"  enctype="multipart/form-data" method="POST">
+						{% csrf_token %}
+                        <div class="form-group">
+                            <label for="enviromentcateid" class="create" >Môi trường*</label>
+                            <input type="text" list="enviromentcatelist" name="enviromentcateid" autocomplete="off" value="{{ forum.enviromentcateid.enviromentcateid }}" class="form-control" style="width:30%;" required="required"/>
+                            <datalist id="enviromentcatelist">
+                            <option value="{{ forum.enviromentcateid.enviromentcateid }}">{{ forum.enviromentcateid.enviromentcatename }}</option>
+							{% for enviromentcate in enviromentcates  %}
+								{% if enviromentcate.enviromentcateid != forum.enviromentcateid.enviromentcateid %}
+                              		<option value="{{ enviromentcate.enviromentcateid }}">{{ enviromentcate.enviromentcatename }}</option>
+								{% endif %}
+							{% endfor %}
+                            </datalist>
+
+							<label for="subjectid" class="create" >Khóa học*</label> 
+							{% if forum.subjectid.subjectid != null %}
+                            	<input type="text" list="subjectlist" name="subjectid" value="{{forum.subjectid.subjectid}}" autocomplete="off" class="form-control" style="width:30%;" required="required"/>
+                            {% else %}
+								<input type="text" list="subjectlist" name="subjectid" value="0" autocomplete="off" class="form-control" style="width:30%;" required="required"/>
+							{% endif %}
+							<datalist id="subjectlist">
+							{% if forum.subjectid.subjectid != null %}
+								<option value="{{ forum.subjectid.subjectid }}">{{ forum.subjectid.subjectname }}</option>
+								{% for subject in subjects  %}
+									{% if subject.subjectid != forum.subjectid.subectid %}
+										<option value="{{ subject.subjectid }}">{{ subject.subjectname }}</option>
+									{% endif %}
+								{% endfor %}
+								<option value="0">Không thuộc khóa học nào</option>
+							{% else %}
+								{% for subject in subjects  %}
+									<option value="{{ subject.subjectid }}">{{ subject.subjectname }}</option>
+								{% endfor %}
+								<option value="0">Không thuộc khóa học nào</option>
+							{% endif %}
+                            </datalist>
+							
+
+                            <label for="forumtopicname" class="create">Tên chủ đề*</label> 
+                            <input type="text" name="forumtopicname" value="{{forum.forumtopicname}}" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                            <label for="description" class="create">Mô tả ngắn*</label> 
+                            <input type="text" name="description" value="{{forum.description}}" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                            <label for="content" class="create">Nội dung*</label> 
+                            <textarea style="width:200px" id="id_description" name="content"  data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: null, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserImageBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;filebrowserImageUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_description" data-type="ckeditortype">{{forum.content | safe}}</textarea>
+                            <label for="avatar" class="create">Ảnh đại diện*</label> 
+                            <br>
+							<img src="{{forum.avatar}}" alt="Avatar" style="width:70px;height:70px;border-radius:50%;display:inline">
+                            <label id="butavar" type="file" for="upload" class="btn_1 rounded " style="width: auto;background-color: #3f9fff">Đổi Ảnh </label>	
+                            <input id="upload" name="avatar" type="file" style="display:none">
+                            <br>
+                            <label for="note" class="create">Ghi chú</label>
+                            <input type="text" value="{{forum.note}}" name="note" autocomplete = "off"  class="form-control" style="width:30%;"/>
+                            <br>
+                            <div style="width:100%;" align="center">
+                              <button  type="submit" class="btn_1 rounded"><span class="glyphicon glyphicon-plus"></span> Lưu</button>
+                      		</div>  
+					  </div>
+					</form>
+					</div>
+					<!-- /single-post -->
+
+				
+					<hr>
+
+					
+				</div>
+				<!-- /col -->
+
+				
+				<!-- /aside -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+
+		<script>
+        $("#upload").change(function(){
+            var filename = $('input[type=file]').val().split('\\').pop();
+            filename= "Tên ảnh: ("+filename+")"
+			$("#butavar").html(filename);
+			$("#upimg").css({"display":""});
+        })
+    </script>
+
+	{% endblock %}
+	<!--/main-->
+	

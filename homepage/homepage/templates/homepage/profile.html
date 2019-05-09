@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Udema a modern educational site template">
+	<meta name="author" content="Ansonika">
+	<title>VS-PRO | Visual Programming Learning</title>
+    {% load static %}
+	<!-- Favicons-->
+	<link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+	<!-- BASE CSS -->
+	<link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+	<!-- YOUR CUSTOM CSS -->
+	<link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+	
+	<div id="page" class="theia-exception">
+		
+		<header class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+					<li><span><a href="#0">Giới Thiệu</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+							<li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+							<li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+							<li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+							{% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Tynker</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+							<li><a href="#"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Alice3D</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+							<li><a href="#"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							{% comment %} <li><a href="{% url 'course:coursechapter' 2 %}">Nào Ta Cùng Học</a></li>
+							<li><a href="course-detail.html">Trò Chơi Của Em</a></li>
+							<li><a href="course-detail.html">Dự Án Của Em</a></li>
+							<li><a href="courses-grid-sidebar.html">Cùng Nhau Thảo Luận</a></li> {% endcomment %}
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Arduino</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="#"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							<li><a href="#"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+							
+						</ul>
+					</li>
+					<li><span><a href="#0">Khóa Học</a></span>
+						<ul>
+							<li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+							<li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+							<li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+							<li><a href="courses-grid-sidebar.html"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+						</ul>
+					</li>
+					
+					<li><span><a href="#0">Cuộc Thi</a></span>
+						<ul>
+							<li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+							<li><a href="#"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+						</ul>
+					</li>
+
+
+					<li><span><a href="#0">Hỏi Đáp</a></span>
+						<ul>
+							<li><a href="#"><i class="fa fa-newspaper-o" style="font-size:14pt"></i> Bài Viết Chia Sẻ</a></li>
+							<li><a href="#"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+							<li><a href="#"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỗ Trợ</a></span>
+						<ul>
+							<li><a href="#"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+							<li><a href="#"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+							<li><a href="#"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+						</ul>
+					</li>
+					
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'adminpage:adminpage' %}"><i class="fa fa-user-secret" style="font-size:14pt"></i>&nbsp Admin</a></li>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+							{% comment %} <li><a href="{% url 'course:mycourse' %}">Khóa Học Của Tôi</a></li>
+							<li><a href="{% url 'course:dashboard' %}">Hoạt Động Gần Đây</a></li>
+							<li><a href="{% url 'homepage:logout' %}">Đăng Xuất</a></li> {% endcomment %}
+						</ul>
+					</li>
+					
+
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+	<!-- /header -->
+		
+
+		<main>
+			<section id="hero_in" class="general" style="background: url(http://via.placeholder.com/1600x1067/ccc/fff/bg_general.jpg) center center no-repeat;">
+				<div class="wrapper">
+					<div class="container">
+						<h1 class="fadeInUp"><span></span>Chỉnh Sửa Thông Tin</h1>
+					</div>
+				</div>
+			</section>
+			<!--/hero_in-->
+			<div class="container margin_60_35">
+				<div class="row">
+					<aside class="col-lg-3" id="sidebar">
+						<div class="profile" class="">
+							<figure style="margin-left: 2px" ><img src="{{account.avatar}}" alt="Teacher" class="rounded-circle" style="width: 200px;height: 200px;"></figure>
+							<div style="padding-left:10px;padding-top: 10px;" align="center">
+								<label type="file" for="avatar1" class="btn_1 rounded full-width add_top_30" style="width: 180px;background-color: #3f9fff">Chọn Ảnh </label>	
+							</div>
+
+							<a class="btn_1 rounded full-width" href="{% url 'homepage:changepassword' account.accountid %}">Đổi Mật Khẩu</a>
+							<ul class="social_teacher">
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-email"></i></a></li>
+							</ul>
+							<ul>
+								<li>Tên Tài Khoản <span class="float-right">{{account.username}}</span> </li>
+							</ul>
+						</div>
+					</aside>
+					<!--/aside -->
+
+					<div class="col-lg-9">
+						<div class="box_teacher">
+							<div class="indent_title_in">
+								<i class="pe-7s-user"></i>
+								<h3>Thông Tin</h3>
+								<p>Chi tiết về tài khoản của bạn</p>
+							</div>
+							<div class="wrapper_indent">
+								<form autocomplete="off" style="margin-right: 200px" enctype="multipart/form-data" method="POST">
+									{% csrf_token %}
+									<div class="form-group">
+										{% for message in messages %}
+										<div class="alert alert-success" style="color: #f8f9fa; background-color: #dc3545;">
+											<a class="close" data-dismiss="alert">×</a>
+												{{ message }}
+										</div>
+										{% endfor %}
+										<span class="input">
+											<input name="lastname" value="{{userdetail.lastname}}" class="input_field" type="text" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Họ<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+
+										<span class="input">
+											<input name="firstname" value="{{userdetail.firstname}}" class="input_field" type="text" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Tên<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+
+										<span class="input" >
+											<input id="date-input" name="birthday" value="{{userdetail.birthday}}" class="input_field" type="date" style="padding-left: 100px;" placeholder="dd-mm-yy">
+											<label class="input_label">
+												<span id="span-date" class="input__label-content">Ngày Sinh<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<script language="javascript">
+												function checkyear(){
+													 var span = document.getElementById("span-date");
+													 var date = document.getElementById("date-input");
+													 var n= new Date(date.value).getFullYear();
+													 var n = parseInt(n);
+													 if (n>9999) {
+														 date.value="";
+														 span.innerHTML="Ngày sinh không hợp lệ, định dạng đúng 'DD-MM-YYYY'"
+													 }
+													   };
+												   setInterval(checkyear, 1000);
+											   </script>
+										<span class="input">
+											<input name="address" value="{{userdetail.address}}" class="input_field" type="text" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Địa Chỉ<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<span class="input">
+											<input name="phonenumber" value="{{userdetail.phonenumber}}" class="input_field" type="phone" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Số Điện Thoại<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<span class="input">
+											<input name="email" value="{{userdetail.email}}" class="input_field" type="email" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Email<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<span class="input" style="display:none;">
+											<input id="avatar1" name="avatar" value="{{userdetail.avatar}}" class="input_field" type="file" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">hinh<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										
+										{% comment %} <script language="javascript">
+  											var input1=document.getElementById("avarta1");
+  											var input2 = document.getElementById("avatar2");
+  											function show_result() {
+    											input1.value=input2.value;
+  											}
+  											setInterval(show_result, 1000);
+										</script> {% endcomment %}
+										<div style="padding-left:32px;padding-top: 25px;" align="center">
+											<button type="submit" class="btn_1 rounded full-width add_top_30" style="width: 180px;background-color: #3f9fff">Lưu Lại </button>
+										</div>
+										<div id="pass-info" class="clearfix"></div>
+									</div>
+
+								</form>
+
+								<!-- End row-->
+							</div>
+							<!--wrapper_indent -->
+
+						</div>
+						<!-- /col -->
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</main>
+			<!--/main-->
+
+			<footer>
+				<div class="container margin_120_95">
+					<div class="row">
+						<div class="col-lg-5 col-md-12 p-r-5">
+							<p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+							<p>Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus expetendis vis.</p>
+							<div class="follow_us">
+								<ul>
+									<li>Follow us</li>
+									<li><a href="#0"><i class="ti-facebook"></i></a></li>
+									<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
+									<li><a href="#0"><i class="ti-google"></i></a></li>
+									<li><a href="#0"><i class="ti-pinterest"></i></a></li>
+									<li><a href="#0"><i class="ti-instagram"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 ml-lg-auto">
+							<h5>Useful links</h5>
+							<ul class="links">
+								<li><a href="#0">Admission</a></li>
+								<li><a href="#0">About</a></li>
+								<li><a href="#0">Login</a></li>
+								<li><a href="#0">Register</a></li>
+								<li><a href="#0">News &amp; Events</a></li>
+								<li><a href="#0">Contacts</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<h5>Contact with Us</h5>
+							<ul class="contacts">
+								<li><a href="tel://61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
+								<li><a href="mailto:info@udema.com"><i class="ti-email"></i> info@udema.com</a></li>
+							</ul>
+							<div id="newsletter">
+								<h6>Newsletter</h6>
+								<div id="message-newsletter"></div>
+								<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+									<div class="form-group">
+										<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+										<input type="submit" value="Submit" id="submit-newsletter">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!--/row-->
+					<hr>
+					<div class="row">
+						<div class="col-md-8">
+							<ul id="additional_links">
+								<li><a href="#0">Terms and conditions</a></li>
+								<li><a href="#0">Privacy</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<div id="copy">© 2017 Udema</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!--/footer-->
+		</div>
+		<!-- page -->
+
+		<!-- COMMON SCRIPTS -->
+		<script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+		<script src="{% static 'homepage/js/common_scripts.js' %}"></script>
+		<script src="{% static 'homepage/js/main.js' %}"></script>
+		<script src="{% static 'homepage/assets/validate.js' %}"></script>
+		
+	</body>
+	</html>

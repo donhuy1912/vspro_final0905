@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Udema a modern educational site template">
+	<meta name="author" content="Ansonika">
+	<title>VS-PRO | Visual Programming Learning</title>
+    {% load static %}
+	<!-- Favicons-->
+	<link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+	<!-- BASE CSS -->
+	<link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/barw3.css' %}" rel="stylesheet">
+	<!-- SPECIFIC CSS -->
+	<link href="{% static 'homepage/css/skins/square/grey.css' %}" rel="stylesheet">
+	<!-- CSS CLOCK-->
+	<link rel="stylesheet" href="{% static 'homepage/css/circle.css' %}">
+
+	<!-- YOUR CUSTOM CSS -->
+
+	<link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- NProgress -->
+	<link href="{% static 'homepage/vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+
+	<!-- Custom styling plus plugins -->
+	<link href="{% static 'homepage/build/css/custom.min.css' %}" rel="stylesheet">
+	<script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+	 <!-- CK-EDITOR -->
+	 <link href="{% static 'ckeditor/ckeditor_uploader/admin_base.css' %}" rel="stylesheet">
+	 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+	 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+	 <script>
+		function resizeIframe(obj) {
+		  obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		}
+	  </script>
+</head>
+
+<body class="nav-md" style="background: #121921;">
+	
+	<div id="page" class="theia-exception" style="height: auto;min-height: 600px">
+		
+		<header id='header' class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+					<li><span><a href="#0">Giới Thiệu</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+							<li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+							<li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+							<li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+							{% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Tynker</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 1 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Alice3D</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 2 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Arduino</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'course:userforumcourse' 3 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							<li><a href="{% url 'homepage:resource' %}"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+							
+						</ul>
+					</li>
+					<li><span><a href="#0">Khóa Học</a></span>
+              <ul>
+                <li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+                <li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+                <li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+                <li><a href="{% url 'course:showsubjectcate2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+              </ul>
+            </li>
+            
+            <li><span><a href="#0">Cuộc Thi</a></span>
+              <ul>
+                {% comment %} <li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li> {% endcomment %}
+                <li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+                <li><a href="{% url 'usercompetition:listcompetition2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+              </ul>
+            </li>
+
+					<li><span><a href="#0">Hỏi Đáp</a></span>
+						<ul>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fa fa-file-alt" style="font-size:14pt"></i>&nbsp  Dự Án Chia Sẻ</a></li>
+							<li><a href="{% url 'userforum:userforum' %}"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+							<li><a href="{% url 'userforum:fastchat' %}"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỗ Trợ</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:sitemap' %}"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+							<li><a href="{% url 'homepage:userguide' %}"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+							<li><a href="{% url 'homepage:contact' %}"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+						</ul>
+					</li>
+					
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+							{% comment %} <li><a href="{% url 'course:mycourse' %}">Khóa Học Của Tôi</a></li>
+							<li><a href="{% url 'course:dashboard' %}">Hoạt Động Gần Đây</a></li>
+							<li><a href="{% url 'homepage:logout' %}">Đăng Xuất</a></li> {% endcomment %}
+						</ul>
+					</li>
+					
+
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+	<!-- /header -->
+	
+	<main>
+		<section id="hero_in" class="courses" style="background: url({{subject.avatar}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><p style="font-size: 25pt">CHỦ ĐỀ {{lesson.order}}</p><span></span>{{lesson.lessonname}}</h1>
+					</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<div id="stickpart" class="filters_listing sticky_horizontal">
+			<div class="container">
+				<ul class="clearfix">
+					<li>		
+					</li>
+					<li>	
+					</li>
+					<li>
+					</li>
+				</ul>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /filters -->
+		
+		<div class="container body" style="margin-left: 20px;margin-top: 15px;height: auto;min-height: 700px">
+			<div class="main_container" style="height: auto;min-height: 700px;">
+				<div id="leftpart" class="col-md-3 left_col" style="width: 280px;height: auto;min-height:500px">
+					<div class="left_col scroll-view" style="width: 280px;height: auto;background-color: #662d91">
+						<div class="navbar nav_title" style="border: 0;background-color: #662d91">
+							<!-- <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a> -->
+						</div>
+
+						<div class="clearfix" style="margin-left: 5px;"></div>
+
+						<!-- menu profile quick info -->
+						<div class="profile clearfix" style="margin-left:1px;background-color:#662d91; ">
+							<div class="profile_pic" style="border-color: none;border-radius: 50%;">
+								<img src="{{account.avatar}}" alt="..." class="img-circle profile_img" style="background-color: #662d91;width: 100px;height: 100px;border-radius: 50%;border-color:#ffc107;border-width: 5px ">
+							</div>
+							<div class="profile_info" style="padding-left: 40px;padding-top: 35px;">
+								<span>Xin chào,</span>
+								<h2>{{username}}</h2>
+							</div>
+						</div>
+						<!-- /menu profile quick info -->
+
+						<br />
+
+						<!-- sidebar menu -->
+						<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+							<a href="{% url 'course:courselesson' idsub=subject.subjectid idchap=chapter.chapterid idles=lesson.lessonid %}" class="btn_1 full-width" style="width: 200px;margin-left: 30px;background-color: #ffc107;font-size: 12pt;padding-bottom: 15px"> << Quay Về</a>
+							<!-- Chương -->
+							<div class="menu_section" style="padding-bottom: 15px;">
+								<h3 style="padding-top: 15px;font-size: 13pt">{{lesson.lessonname}}</h3>
+								<ul class="nav side-menu">
+									{% for arr in arrItemAct %}
+									<li><a style="width: 275px;position:relative;z-index: 5;color: white;"><i class="fa fa-calendar"></i>
+										MỤC {{arr.item.itemname}}
+										<span class="fa fa-chevron-down"></span></a>
+										<ul class="nav child_menu">
+											{% for arract in arr.listactivity %}
+												<li><a href="{% url 'course:courseactivity' idsub=subject.subjectid idchap=chapter.chapterid idles=lesson.lessonid iditem=arr.item.itemid idact=arract.activityid %}"  style="width: 200px;height: auto;margin-right: 5px;position: relative;z-index: 4;color: white;">
+													{% if arract.activitytypeid.activitytypeid == 1 %}
+													<i class="fa fa-book"></i>
+													{% endif %}
+													{% if arract.activitytypeid.activitytypeid == 2 %}
+													<i class="fa fa-file-pdf-o"></i>
+													{% endif %}
+													{% if arract.activitytypeid.activitytypeid == 3 %}
+													<i class="fa fa-file-video-o"></i>
+													{% endif %}
+													{% if arract.activitytypeid.activitytypeid == 4 %}
+													<i class="fa fa-archive"></i>
+													{% endif %}
+													{% if arract.activitytypeid.activitytypeid == 5 %}
+													<i class="fa fa-gamepad"></i>
+													{% endif %}
+													{% if arract.activitytypeid.activitytypeid == 6 %}
+													<i class="fa fa-cloud-upload"></i>
+													{% endif %}
+													{% if arract.activitytypeid.activitytypeid == 7 %}
+													<i class="fa fa-laptop"></i>
+													{% endif %}																																												
+													{{arract.activityname}}
+												</a></li>
+											{% endfor %}	
+										</ul>
+									</li>
+									{% endfor %}
+								
+
+								</ul>
+							</div>
+
+              			</div>
+              <!-- /sidebar menu -->
+
+              <!-- /menu footer buttons -->
+
+              <!-- /menu footer buttons -->
+          </div>
+      </div>
+
+      <!-- top navigation -->
+
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div id="rightpart" class="right_col" style="margin-left: 280px;width:92%" role="main">
+	  <div  style="width: 100%;height: auto;" class="container">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_content" id="process">
+      <!-- Smart Wizard -->
+      <p>Tiến Trình Học Của Bạn</p>
+      <div id="wizard" class="form_wizard wizard_horizontal">
+        <ul class="wizard_steps">
+        {% for act in listactivity %}
+          <li>
+            <a href="" class="{{act.iscomplete}}">
+              <span class="step_no">{{act.order}}</span>
+              <span class="step_descr">
+                {{act.activity.activityname}}<br/>
+              </span>
+            </a>
+          </li>
+        {% endfor %}  
+        <li>
+            <a href="" class={{lescomplete}}>
+              <span class="step_no">Hết</span>
+              <span class="step_descr">
+                Hoàn Thành<br/>
+              </span>
+            </a>
+          </li>
+    </div>
+    <!-- End SmartWizard Content -->      
+    </div>
+  </div>
+      	<div class="">
+			
+      		<div class="page-title">
+      			<div class="title_left" style="width:100%">
+					  <h3 style="color: #ffc107">HĐ {{activity.order}}: {{activity.activityname}}</h3>
+					  
+				  </div>
+				  
+				  <div id="divclock" style="padding-left: 80%; display:none">
+					  
+						<div id="circlem" class="c100 p12 small">
+							<span id="timem" style="color:#307bbb;font-weight:900;">0</span>
+							<div class="slice">
+								<div class="bar" style="border-color: #307bbb;"></div>
+								<div class="fill" style="border-color: #307bbb;"></div>
+							</div>
+						</div>
+						<div id="circle" class="c100 p12 small">
+							<span id="time" style="color: #307bbb;font-weight:900;">60</span>
+							<div class="slice">
+								<div class="bar"></div>
+								<div class="fill"></div>
+							</div>
+						</div>
+					</div>
+					
+      		</div>
+
+      		<div class="clearfix"></div>
+
+      		<div class="row">
+      			<div class="col-md-12">
+					{% if checkreact == 0  %}
+						<div  class="x_panel" style="width: 100%;">
+							<div class="x_title">
+								<h2>Thông báo</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+  
+									</li>
+									<!-- <li><a class="close-link"><i class="fa fa-close"></i></a>
+									</li> -->
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+  
+								<section id="web-application">
+									<h2>Bạn Cần Hoàn Thành Hoạt Động : {{requireact.activityname}} </h2>
+								</section>
+								<a href="{% url 'course:courseactivity' idsub=subject.subjectid idchap=chapter.chapterid idles=lesson.lessonid iditem=requitem.itemid idact=requireact.activityid %}">
+								
+								<button class="btn_1 full-width" style="width: 13%;margin-left: 42%"  id="confirm2">Học Ngay</button></a>
+							</div>
+						</div> 
+					{% endif %}
+					{% if checkreact == 1  %}
+					<div id="des" class="x_panel" style="width: 100%;">
+							<div class="x_title">
+								<h2>Hướng Dẫn</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+									</li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+	
+								<section id="web-application">
+									<h2 class="page-header">{{activity.description|safe}}</h2>
+	
+								</section>
+								<div class="w3-container" id='barprocess'>
+									<br>
+									<div class="w3-light-grey w3-round-xlarge">
+									<div style="width:0%;background-color:#ffc107;font-size: 16pt" align='left' id="myBar" class="w3-blue w3-round-xlarge" >0%</div>
+									</div>
+									<br>
+									</div>
+									
+									<script>
+									$(document).ready(function()
+									{
+										setTimeout(move,1500);
+									})
+									function move() {
+									  var elem = document.getElementById("myBar");   
+									  var width = 0;
+									  var id = setInterval(frame, 100);
+									  function frame() {
+										if (width >= 100) {
+										  clearInterval(id);
+										  $('#cfrmbut').css({'display':''})
+										  $('#barprocess').css({'display':'none'})
+										} else {
+										  width++; 
+										  elem.style.width = width + '%'; 
+										   elem.innerHTML = width/10;
+										}
+									  }
+									}
+									</script>
+								<div style='width:100%' align='right'>
+							<button id="cfrmbut" class="btn_1 full-width" style="width: 13%;margin-left: 42%;display: none" onclick="confirm()" id="confirm2">Bỏ qua</button>
+							</div>
+							</div>
+							  </div>
+					{% endif %}
+
+      				
+					  
+
+      				<div id="learn" class="x_panel" style="width: 100%;height: auto; visibility: hidden;">
+      					<div class="x_title">
+      						<h2>Nội Dung</h2>
+      						<ul class="nav navbar-right panel_toolbox">
+      							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+      							</li>
+      							<li class="dropdown">
+									
+      							</li>
+      							
+      						</ul>
+							  <div class="clearfix"></div>
+							  
+      					</div>
+      					<div class="x_content" >
+								{{activity.content|safe}}
+							<div id="divscorm" style="display:none">
+
+      						<section id="web-application">
+							 
+      							{% comment %} {{activity.content|safe}} {% endcomment %}
+							<div style="width:100%;" align="center">
+								<!-- Can src hop ly-->
+								<iframe  style="width:1400px; height:768px;"  src="{{activity.link}}" id="iframe" onload="resizeIframe(this)" allowfullscreen>
+								</iframe>
+							</div>
+							  </section>
+							</div>
+							   <div align="center">
+							  	<button  class="btn_1 " id="zoomout">Bắt Đầu</button>
+							  	<button  style="display:none;background-color:#ffc107"  class="btn_1 " id="zoomin">Trở Về</button>
+							  </div>
+							  <div id="passdiv" style="padding-left:85%;" >
+									<a href=""  style="display:none; width:100%"  class="btn_1" id="passnext"></a>
+									<button href="" style="display:none"  class="btn_1 " id="passtrack">Hoàn Thành</button>
+							  </div>
+							 
+      					</div>
+					  </div>
+					  
+      				<div id="rew"  class="x_panel" style="width: 100%; visibility: hidden;">
+      					<div class="x_title">
+      						<h2>Đánh Giá</h2>
+      						<ul class="nav navbar-right panel_toolbox">
+      							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+      							</li>
+      							<li class="dropdown">
+
+      							</li>
+      							
+      						</ul>
+      						<div class="clearfix"></div>
+      					</div>
+      					<div class="x_content">
+
+      						<div class="reviews-container">
+      							<div class="review-box clearfix">
+      								<figure class="rev-thumb"><img src="{{account.avatar}}" alt="" style="width:40px;height:40px;border-radius:50%;display:inline">
+      								</figure>
+      								<div class="rev-content">
+      									<div class="rating">
+      										<i class="icon_star" id="str1"></i>
+      										<i class="icon_star" id="str2"></i>
+      										<i class="icon_star" id="str3"></i>
+      										<i class="icon_star" id="str4"></i>
+      										<i class="icon_star" id="str5"></i>
+      									</div>
+
+      									<div class="rev-info">
+      									</div>
+      									<div class="rev-text">
+											<textarea cols="40" id="id_description" maxlength="100" name="description" rows="10" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: null, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserImageBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;filebrowserImageUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_description" data-type="ckeditortype"></textarea>
+      										<input name="userrate" id="userrate" placeholder="4" value="4" style="display:none">
+      									</div>
+      								</div>
+      								<button class="btn_1 full-width" style="width: 20%;margin-left: 80%"  id="confirm3">Đăng</button>	
+								</div>
+							
+								<!-- /review-box -->
+      							<div id="listcmt">
+									{% for act in ActandAcc %}
+									<div  class="review-box clearfix">
+										
+										<figure class="rev-thumb"><img src="{{act.account.avatar}}" alt="" style="width:40px;height:40px;border-radius:50%;display:inline">
+										</figure>
+										<div class="rev-content">
+											<div class="rating">
+												{% for j in '01234' %}
+													{% if j|add:"0" < act.activityreply.rate|add:"0" %}
+														<i class="icon_star voted"></i>
+													{% else %}
+														<i class="icon_star"></i>
+													{% endif %}
+												{% endfor %}
+											</div>
+												<div class="rev-info">
+													{{ act.account.username }} - {{act.activityreply.createdate}}
+													{% if act.account.username == username %}
+														<br><br>
+														<a  onclick={{act.activityreply.activityreplyid}} class="btn_1" style="background-color:#FFC107;color:white">Xóa</a>
+													{% endif %}
+												</div>
+												
+												<div class="rev-text">
+													<p>
+														{{act.activityreply.content|safe}}
+													</p>
+												</div>
+											</div>
+										
+										
+				
+									</div>
+									{% endfor %}
+									</div>
+
+      						</div>
+
+      					</div>
+      				</div>
+
+      				<script type="text/javascript">
+      					var xpende=document.getElementById("des");
+      					var xpenle=document.getElementById("learn");
+      					var xpenre=document.getElementById("rew");
+						  var but = document.getElementById("confirm2");
+						  var clock = document.getElementById("divclock");
+      					function confirm() {
+      						xpende.style.display ="none";
+      						xpenle.style.visibility  = "visible";
+							  xpenre.style.visibility  = "visible";
+							  clock.style.display="";
+							  $("#process").css({"display":"none"});
+      					}
+      				</script>
+
+      			</div>
+      		</div>
+      	</div>
+      </div>
+
+      <!-- /page content -->
+
+      <!-- footer content -->
+
+      <!-- /footer content -->
+  </div>
+</div>
+
+</main>
+<!--/main-->
+
+
+<!--/footer-->
+</div>
+<div style="padding-top: 50px">
+	<!-- page -->
+	<footer>
+		<div class="container margin_120_95">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 p-r-5">
+					<p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+					<p>VS-Pro là một trang Web học tập STEM trực tuyến không nhằm mục đích thương mại, là một đồ án khóa luận tốt nghiệp của sinh viên Đại Học Sư Phạm thành phố Hồ Chí Minh.<br> Giáo dục là động lực phát triển của nền văn minh nhân loại, Giáo dục thì cần được phát triển có hệ thống và cần được cung cấp miễn phí. </p>
+					<div class="follow_us">
+						<ul>
+							<li>Mạng Xã Hội</li>
+							<li><a href="#0"><i class="ti-facebook"></i></a></li>
+							
+							<li><a href="#0"><i class="ti-google"></i></a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ml-lg-auto">
+					<h5>Liên Kết Nhanh</h5>
+					<ul class="links">
+						<li><a href="{% url 'homepage:introduction' %}">Tổng Quan</a></li>
+						<li><a href="{% url 'homepage:aboutus' %}">Về Chúng Tôi</a></li>
+						<li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+						<li><a href="#0">Tin tức</a></li>
+						<li><a href="#0">Liên Lạc</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Liên hệ</h5>
+					<ul class="contacts">
+						<li><a href="tel://61280932400"><i class="ti-mobile"></i>0799 533166 - 0933 603326</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-email"></i>vsprodhsp@gmail.com</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-location-pin"></i>Trung Tâm Tin Học 280 An Dương Vương, P4, Q5, TP HCM</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<div class="col-md-8">
+					<ul id="additional_links">
+						{% comment %} <li><a href="#0">Terms and conditions</a></li>
+						<li><a href="#0">Privacy</a></li> {% endcomment %}
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div id="copy">©2019 VS-PRO</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+<script type="text/javascript">
+	var s1=document.getElementById("str1");
+	var s2=document.getElementById("str2");
+	var s3=document.getElementById("str3");
+	var s4=document.getElementById("str4");
+	var s5=document.getElementById("str5");
+	var urate=document.getElementById("userrate");
+	str1.onclick=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star";
+		s3.className="icon_star";
+		s4.className="icon_star";
+		s5.className="icon_star";
+		urate.value= 1;
+	}
+	str2.onclick=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star";
+		s4.className="icon_star";
+		s5.className="icon_star";
+		urate.value= 2;
+	}
+	str3.onclick=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star voted";
+		s4.className="icon_star";
+		s5.className="icon_star";
+		urate.value= 3;
+	}
+	str4.onclick=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star voted";
+		s4.className="icon_star voted";
+		s5.className="icon_star";
+		urate.value= 4;
+	}
+	str5.onclick=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star voted";
+		s4.className="icon_star voted";
+		s5.className="icon_star voted";
+		urate.value= 5;
+	}
+	// hover
+
+	str1.onmouseenter=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star";
+		s3.className="icon_star";
+		s4.className="icon_star";
+		s5.className="icon_star";
+	}
+	str2.onmouseenter=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star";
+		s4.className="icon_star";
+		s5.className="icon_star";
+	}
+	str3.onmouseenter=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star voted";
+		s4.className="icon_star";
+		s5.className="icon_star";
+	}
+	str4.onmouseenter=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star voted";
+		s4.className="icon_star voted";
+		s5.className="icon_star";
+	}
+	str5.onmouseenter=function()
+	{
+		s1.className="icon_star voted";
+		s2.className="icon_star voted";
+		s3.className="icon_star voted";
+		s4.className="icon_star voted";
+		s5.className="icon_star voted";
+	}
+</script>
+
+<script>
+	function check(idactRep){
+		var listcmt = $("#listcmt");
+		
+		$.ajax({
+			url: '/ajax/actDelComment',
+			data: {
+				'idactRep': idactRep
+			},
+			dataType: 'json',
+			success: function(data){
+				listcmt.html(data.s);
+			}
+		})
+	}
+</script>
+<!-- clock js-->
+<input id="actime" style="display:none" value="{{activity.time}}">
+<input id="actid" style="display:none" value="{{activity.activityid}}">
+<script>
+		var time = $("#time");
+		var timem= $("#timem");
+		var circle =$("#circle");
+		var circlem =$("#circlem");
+		circle.attr('class',"c100 p0 small");
+		var value = $("#actime").val();
+		var req=value/4;
+		var min =value-1;
+		var sec = 60;
+		
+	$("#cfrmbut").click(function Run() {
+		timem.html(value);
+		timem.html(min);
+		perm= parseInt((min/60)*100);
+		tempm= "c100 p"+String(100-perm) +" small";
+		circlem.attr('class',tempm);
+		inter=setInterval(Count, 1000);           	 	
+	});
+	
+	function Count()
+	{
+		if(min>=0){
+			sec = sec-1;
+			time.html(sec);
+			per = parseInt((sec/60)*100)
+			temp= "c100 p"+String(100-per) +" small";
+			circle.attr('class',temp);
+			if(sec == 0){
+				perm= parseInt((min/60)*100)
+				tempm= "c100 p"+String(100-perm) +" small";
+				circlem.attr('class',tempm);
+				min=min-1;
+				sec=60;
+				if(min < req){
+					$("#passtrack").css({"display":""});
+				}
+				timem.html(min);
+			}
+			
+		};
+		if(min<0){
+			timem.html(0);
+			time.html(0);
+			clearInterval(inter);
+
+		}
+
+	}
+</script>
+<script>
+	$("#passtrack").click(function()
+	{
+		var actid =$("#actid").val();
+		
+		$.ajax({
+			url: '/ajax/trackingActivity',
+			data:{
+				'actid': actid
+			},
+			dataType: 'json',
+			success:function(data)
+			{
+				$("#passtrack").css({"display":"None"});
+				$("#passnext").html(data.s);
+				$("#passnext").css({"display":""});
+				$("#passdiv").css({"padding-left":"70%"});
+				$("#passnext").attr('href',data.link);
+			}
+		})
+	});
+</script>
+
+<script>
+	var headpart = $("#headpart");
+	var leftpart = $("#leftpart");
+	var hero_in = $("#hero_in");
+	var stickpart=$("#stickpart");
+	var rew = $("#rew");
+	var zoomin = $("#zoomin");
+	var zoomout = $("#zoomout");
+	var rightpart=$("#rightpart");
+	var iframe =$("#iframe");
+	var header =$("#header");
+	$("#zoomout").click(function()
+	{
+		zoomin.css({"display":""});
+		zoomout.css({"display":"none"});
+		headpart.css({"display":"none"});
+		leftpart.css({"display":"none"});
+		hero_in.css({"display":"none"});
+		header.css({"display":"none"});
+		stickpart.css({"display":"none"});
+		rew.css({"display":"none"});
+		rightpart.css({"margin-left":"2%"});
+		window.scrollTo(0,100);
+		$("#learn").css({"height":"900px"});
+		iframe.css({"height":"900px"});
+		iframe.css({"padding-left":"1px"});
+		$("#divscorm").css({"display":""});
+		$("#learn").attr('class','sss');
+		iframe.zoom = "20%"
+		
+	});
+	$("#zoomin").click(function()
+	{
+		zoomin.css({"display":"none"});
+		zoomout.css({"display":""});
+		headpart.css({"display":""});
+		leftpart.css({"display":""});
+		hero_in.css({"display":""});
+		header.css({"display":""});
+		stickpart.css({"display":""});
+		rew.css({"display":""});
+		rightpart.css({"margin-left":"280px"});
+		window.scrollTo(0,500);
+		iframe.css({"height":"768px"});
+		$("#learn").css({"height":"auto"});
+		$("#divscorm").css({"display":"none"});
+		$("#learn").attr('class','x_panel');
+		document.body.style.zoom = "100%"
+	});
+</script>
+
+<script>
+	$("#confirm3").click(function(){
+		var idact=$("#actid").val();
+		var rate =$("#userrate").val();
+		var des =CKEDITOR.instances.id_description.getData();
+		CKEDITOR.instances.id_description.setData("");
+		var listcmt = $("#listcmt");
+		$.ajax({
+			url: '/ajax/actCreateComment',
+			data: {
+				'idact':idact,
+				'rate':rate,
+				'des':des,
+			},
+			dataType: 'json',
+			success: function(data){
+				listcmt.html(data.s);
+			}
+		})
+	})
+</script>
+<!-- COMMON SCRIPTS -->
+
+<script src="{% static 'homepage/js/main.js' %}"></script>
+<script src="{% static 'homepage/assets/validate.js' %}"></script>'
+
+
+<script src="{% static 'homepage/vendors/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'homepage/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'homepage/vendors/fastclick/lib/fastclick.js' %}"></script>
+<!-- NProgress -->
+<script src="{% static 'homepage/vendors/nprogress/nprogress.js' %}"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="{% static 'homepage/build/js/custom.min.js' %}"></script>
+
+</body>
+</html>

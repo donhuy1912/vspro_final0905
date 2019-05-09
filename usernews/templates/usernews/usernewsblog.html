@@ -1,0 +1,553 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Udema a modern educational site template">
+    <meta name="author" content="Ansonika">
+    <title>VS-PRO | Visual Programming Learning</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+    
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'homepage/css/blog.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+	<!-- CK-EDITOR -->
+	 <link href="{% static 'ckeditor/ckeditor_uploader/admin_base.css' %}" rel="stylesheet">
+	 <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+	 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+</head>
+
+<body>
+	
+	<div id="page">
+		
+	<header class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+					<li><span><a href="#0">Giới Thiệu</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+							<li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+							<li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+							<li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+							{% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Tynker</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 1 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Alice3D</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+							<li><a href="{% url 'course:userforumcourse' 2 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							
+						</ul>
+					</li>
+
+						<li><span><a href="#0">Arduino</a></span>
+						<ul>
+							<li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+							<li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+							<li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+							<li><a href="{% url 'course:userforumcourse' 3 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+							<li><a href="{% url 'homepage:resource' %}"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+							
+						</ul>
+					</li>
+					<li><span><a href="#0">Khóa Học</a></span>
+						<ul>
+							<li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+							<li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+							<li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+							<li><a href="{% url 'course:showsubjectcate2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+						</ul>
+					</li>
+					
+					<li><span><a href="#0">Cuộc Thi</a></span>
+						<ul>
+							{% comment %} <li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li> {% endcomment %}
+							<li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+							<li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+							<li><a href="{% url 'usercompetition:listcompetition2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỏi Đáp</a></span>
+						<ul>
+							<li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fa fa-file-alt" style="font-size:14pt"></i>&nbsp  Dự Án Chia Sẻ</a></li>
+							<li><a href="{% url 'userforum:userforum' %}"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+							<li><a href="{% url 'userforum:fastchat' %}"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+						</ul>
+					</li>
+
+					<li><span><a href="#0">Hỗ Trợ</a></span>
+						<ul>
+							<li><a href="{% url 'homepage:sitemap' %}"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+							<li><a href="{% url 'homepage:userguide' %}"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+							<li><a href="{% url 'homepage:contact' %}"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+						</ul>
+					</li>
+					
+					{% if islog == 1 %}
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+						</ul>
+					</li>
+					{% endif  %}
+					{% if islog == 0 %}
+					<li><span><a href="{% url 'homepage:login' %}">Đăng Nhập</a></span>
+						
+					</li>
+					{% endif %}
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q"searchform" method="get" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+	<!-- /header -->
+	
+	<main>
+		<section id="hero_in"  class="general" style="background: url({{news.avatar}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+			<div class="wrapper" style="background-color: rgba(101, 74, 162, 0.79);" >
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>{{ news.newsname }}</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<div class="container margin_60_35">
+			<div class="row">
+				<aside class="col-lg-3">
+					{% comment %} <div class="widget">
+						<form>
+							<div class="form-group">
+								<input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+							</div>
+							<button type="submit" id="submit" class="btn_1 rounded"> Search</button>
+						</form>
+					</div> {% endcomment %}
+					<!-- /widget -->
+					<div class="widget">
+						<div class="widget-title">
+							<h4>Tin Tức Mới Nhất</h4>
+						</div>
+						<ul class="comments-list">
+						{% for news in newss %}
+							<li>
+								<div class="alignleft">
+									{% if news.avatar != null %}
+										<a href="#0"><img style="width:80px; height:80px" src="{{ news.avatar }}" alt=""></a>
+									{% else %}
+										<a href="#0"><img src="http://via.placeholder.com/150x150/ccc/fff/blog-5.jpg" alt=""></a>
+									{% endif %}
+								</div>
+								<small>{{ news.createdate.day }}.{{ news.createdate.month }}.{{ news.createdate.year }}</small>
+								<h3 style="text-align: justify"><a href="{% url 'usernews:usernewsblog' news.newsid %}" style="text-align: justify" title="">{{ news.newsname }}</a></h3>
+							</li>
+						{% endfor %}
+						</ul>
+					</div>
+					<!-- /widget -->
+					{% comment %} <div class="widget">
+						<div class="widget-title">
+							<h4>Blog Categories</h4>
+						</div>
+						<ul class="cats">
+							<li><a href="#">Admissions <span>(12)</span></a></li>
+							<li><a href="#">News <span>(21)</span></a></li>
+							<li><a href="#">Events <span>(44)</span></a></li>
+							<li><a href="#">Focus in the lab <span>(31)</span></a></li>
+						</ul>
+					</div> {% endcomment %}
+					<!-- /widget -->
+					{% comment %} <div class="widget">
+						<div class="widget-title">
+							<h4>Popular Tags</h4>
+						</div>
+						<div class="tags">
+							<a href="#">Information tecnology</a>
+							<a href="#">Students</a>
+							<a href="#">Community</a>
+							<a href="#">Carreers</a>
+							<a href="#">Literature</a>
+							<a href="#">Seminars</a>
+						</div>
+					</div> {% endcomment %}
+					<!-- /widget -->
+				</aside>
+				<div class="col-lg-9">
+					<div class="bloglist singlepost">
+						{% if news.avatar != null %}
+							<p><img alt="" class="img-fluid" style="width:765px; height: 362.500px" src="{{ news.avatar }}"></p>
+						{% else %}
+							<p><img alt="" class="img-fluid" src="http://via.placeholder.com/800x400/ccc/fff/blog-single.jpg"></p>
+						{% endif %}
+						<h1>{{ news.newsname }}</h1>
+						<div class="postmeta">
+							<ul>
+								<li><a href="#"><i class="icon_folder-alt"></i> {{ news.enviromentcateid.enviromentcatename }}</a></li>
+								<li><a href="#"><i class="icon_clock_alt"></i> {{ news.createdate.day }}/{{ news.createdate.month }}/{{ news.createdate.year }}</a></li>
+								<li><a href="#"><i class="icon_pencil-edit"></i> {{ username }}</a></li>
+								<li><a href="#"><i class="icon_comment_alt"></i> ({{lennewsrep}}) Bình luận</a></li>
+							</ul>
+						</div>
+						<!-- /post meta -->
+						<div class="post-content">
+							<div class="dropcaps">
+								<p style=" text-align: justify">{{ news.content | safe }}</p>
+							</div>
+							{% comment %} <p style=" text-align: justify">Aorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<p style=" text-align: justify">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p> {% endcomment %}
+						</div>
+						<!-- /post -->
+					</div>
+					<!-- /single-post -->
+					<hr>
+					<h5>Viết Bình Luận</h5>
+					
+						<div class="form-group">
+							<textarea cols="40" id="content" maxlength="100" name="content" rows="10" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: null, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserImageBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;filebrowserImageUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="content" data-type="ckeditortype"></textarea>
+						</div>
+						{% if islog == 1 %}
+						<div class="form-group" align="right">
+							<button type="submit" id="submitcomment" class="btn_1 rounded add_bottom_30">Đăng</button>
+						</div>
+						{% endif %}
+						{% if islog == 0 %}
+						<div class="form-group" align="center">
+							<button class="btn_1 rounded add_bottom_30" style="background-color:red">Bạn Cần Đăng Nhập Để Bình Luận</button>
+						</div>
+						{% endif %}
+
+					<div >
+						<h5>Bình Luận</h5>
+						<ul id="commentlist">
+							{% for usernewsreplist in userdetailnewsreplylist %}
+								<li>
+									<div class="avatar">
+										{% if usernewsreplist.newsreply.accountid.avatar != null %}
+											<a href="#"><img src="{{ usernewsreplist.newsreply.accountid.avatar }}" style="width: 68px; height:68px" alt=""></a>
+										{% else %}
+											<a href="#"><img src="http://via.placeholder.com/150x150/ccc/fff/avatar1.jpg" alt=""></a>
+										{% endif %}
+										
+									</div>
+									<div class="comment_right clearfix">
+										<div class="comment_info">
+											Bình luận của <a href="#">{{ usernewsreplist.userdetail.lastname }} {{ usernewsreplist.userdetail.firstname }}</a><span>|</span>{{ usernewsreplist.newsreply.createdate.day }}-{{ usernewsreplist.newsreply.createdate.month }}-{{ usernewsreplist.newsreply.createdate.year }}<span>|
+											{% if usernewsreplist.newsreply.accountid == account %}
+												&nbsp<button  onclick={{usernewsreplist.newsreply.newsreplyid}} class="" style="background-color:#FFC107; color:white; border-radius: 30%">Xóa</button>
+											{% endif %}
+											</span>
+										</div>
+										{{ usernewsreplist.newsreply.content | safe }}
+									</div>
+								</li>
+								<br>
+							{% endfor %}							
+							
+						</ul>
+					</div>
+					<div style="width: 100%; " align=center>
+					<button id="loadmore" class="btn_1 rounded add_top_30" style="border-radius:5%"> Xem thêm </button>
+					</div>
+
+					
+					
+				</div>
+				<!-- /col -->
+
+				
+				<!-- /aside -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</main>
+	<!--/main-->
+	
+	<footer>
+		<div class="container margin_120_95">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 p-r-5">
+					<p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+					<p>VS-Pro là một trang Web học tập STEM trực tuyến không nhằm mục đích thương mại, là một đồ án khóa luận tốt nghiệp của sinh viên Đại Học Sư Phạm thành phố Hồ Chí Minh.<br> Giáo dục là động lực phát triển của nền văn minh nhân loại, Giáo dục thì cần được phát triển có hệ thống và cần được cung cấp miễn phí. </p>
+					<div class="follow_us">
+						<ul>
+							<li>Mạng Xã Hội</li>
+							<li><a href="#0"><i class="ti-facebook"></i></a></li>
+							
+							<li><a href="#0"><i class="ti-google"></i></a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ml-lg-auto">
+					<h5>Liên Kết Nhanh</h5>
+					<ul class="links">
+						<li><a href="{% url 'homepage:introduction' %}">Tổng Quan</a></li>
+						<li><a href="{% url 'homepage:aboutus' %}">Về Chúng Tôi</a></li>
+						<li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+						<li><a href="#0">Tin tức</a></li>
+						<li><a href="#0">Liên Lạc</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Liên hệ</h5>
+					<ul class="contacts">
+						<li><a href="tel://61280932400"><i class="ti-mobile"></i>0799 533166 - 0933 603326</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-email"></i>vsprodhsp@gmail.com</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-location-pin"></i>Trung Tâm Tin Học 280 An Dương Vương, P4, Q5, TP HCM</a></li>
+					</ul>
+					
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<div class="col-md-8">
+					<ul id="additional_links">
+						{% comment %} <li><a href="#0">Terms and conditions</a></li>
+						<li><a href="#0">Privacy</a></li> {% endcomment %}
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div id="copy">©2019 VS-PRO</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/footer-->
+	</div>
+	<!-- page -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'homepage/js/common_scripts.js' %}"></script>
+    <script src="{% static 'homepage/js/main.js' %}"></script>
+	<script src="{% static 'homepage/js/validate.js' %}"></script>
+
+<!--Create comment-->
+	<input id="newsid" value="{{news.newsid}}" style="display: none" ></input>
+	<input id="accountid" value="{{account.accountid}}" style="display: none" ></input>
+
+	{% comment %} <script>
+	$("#submitcomment").click(function(){
+		var accountid=$("#accountid").val();
+		var newsid =$("#newsid").val();
+		var content =CKEDITOR.instances.content.getData();
+		CKEDITOR.instances.content.setData("");
+		var commentlist = $("#commentlist");
+		$.ajax({
+			url: '/ajax/newsreplycreate/',
+			data: {
+				'accountid':accountid,
+				'newsid':newsid,
+				'content':content,
+			},
+			dataType: 'json',
+			success: function(data){
+				commentlist.html(data.s);
+			}
+		})
+	})
+</script> {% endcomment %}
+
+<!--Del comment-->
+	{% comment %} <script>
+	function CommentDelete(newsreplyid){
+		var commentlist = $("#commentlist");
+		$.ajax({
+			url: '/ajax/newsreplydelete',
+			data: {
+				'newsreplyid': newsreplyid
+			},
+			dataType: 'json',
+			success: function(data){
+				commentlist.html(data.s);
+			}
+		})
+	}
+</script> {% endcomment %}
+
+<input id="page" value=0 style="display: none">
+<input id="delnewscmt" value=0 style="display: none">
+<input id="crenewscmt" value=0 style="display: none">
+<input id="contentcmt" value="" style="display: none" ></input>
+<input id="newsreplyid" value="" style="display: none" ></input>
+<script>
+	$( document ).ready(function() {
+		var newsid = $("#newsid").val();
+		var accountid = $("#accountid").val();
+		$("#page").val(0);
+		$("#newsreplyid").val('');
+		$("#delnewscmt").val(0);
+		$("#crenewscmt").val(0);
+		loadnew();
+	});
+	
+	$("#submitcomment").click(function(){
+		$("#crenewscmt").val(1);
+		$("#delnewscmt").val(0);
+		$("#newsreplyid").val('');
+		$("#page").val(0);
+		var accountid = $("#accountid").val();
+		var newsid = $("#newsid").val();
+		var contentcmt = CKEDITOR.instances.content.getData();
+		CKEDITOR.instances.content.setData("");
+		var content = $("#content").val(contentcmt);
+		var commentlist = $("#commentlist");
+		loadnew();
+	});
+
+	$("#loadmore").click(function()
+	{
+		$("#newsreplyid").val('');
+		var page =$("#page").val() + 1 ;
+		var accountid = $("#accountid").val();
+		$("#page").val(page);
+		$("#delnewscmt").val(0);
+		$("#crenewscmt").val(0);
+		loadnew();
+	});
+	function CommentDelete(newsreplyid){
+		var newsid = $("#newsid").val();
+		var accountid = $("#accountid").val();
+		$("#newsreplyid").val(newsreplyid);
+		$("#page").val(0);
+		$("#delnewscmt").val(1);
+		$("#crenewscmt").val(0);
+    	loadnew();
+	}
+	function loadnew(){
+		var newsid =$("#newsid").val();
+		var accountid = $("#accountid").val();
+		var newsreplyid = $("#newsreplyid").val();
+		var page = $("#page").val();
+		var delnewscmt = $("#delnewscmt").val();
+		var crenewscmt = $("#crenewscmt").val();
+		var content = $("#content").val();
+		var commentlist = $("#commentlist");
+
+		$.ajax({
+			url: '/ajax/newsreplyshow/',
+			data: {
+				'page': page,
+				'delnewscmt': delnewscmt,
+				'crenewscmt': crenewscmt,
+				'newsid': newsid,
+				'newsreplyid': newsreplyid,
+				'content': content,
+				'accountid': accountid,
+			},
+			dataType: 'json',
+			success: function(data){
+				if (page == 0){
+					$("#commentlist").html(data.s);
+				}
+				else
+				{
+					var divdom = $("#commentlist").html();
+					var adddiv = divdom + data.s;
+					$("#commentlist").html(adddiv);
+				}
+				if (data.btnmore == 1){
+					$("#loadmore").css({"display":""});
+				}
+				else{
+					$("#loadmore").css({"display":"none"});
+				}
+			}
+		})
+	}
+</script>
+
+</body>
+</html>

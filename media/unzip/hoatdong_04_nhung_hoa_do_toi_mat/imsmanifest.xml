@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_67SrWu4vHvU_course_id" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">hoatdong_04_nhung_hoa_do_toi_mat</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="hoatdong_04_nhung_hoa_do_toi_mat_ORG">
+    <organization identifier="hoatdong_04_nhung_hoa_do_toi_mat_ORG">
+      <title>hoatdong_04_nhung_hoa_do_toi_mat</title>
+      <item identifier="nhung_hoa_do_toi_mat_SCO" isvisible="true" identifierref="__67SrWu4vHvU_course_id_RES">
+        <title>hoatdong_04_nhung_hoa_do_toi_mat</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__67SrWu4vHvU_course_id_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="story_content/video_6WQVhpiG7IZ_18_160_1386x768.mp4" />
+      <file href="mobile/video_6WQVhpiG7IZ_18_160_1386x768.jpg" />
+      <file href="story_content/6MC4ugSxjSX_22050_160_0.mp3" />
+      <file href="story_content/5dDS2hkKFzs_DX2752_DY2752.jpg" />
+      <file href="mobile/5dDS2hkKFzs_DX2752_DY2752_CX1843_CY1152.jpg" />
+      <file href="story_content/61Ia4wZvP6p_22050_160_0.mp3" />
+      <file href="story_content/6eQVJ5efScT_DX1128_DY1128.swf" />
+      <file href="mobile/6eQVJ5efScT_DX1128_DY1128_CX564_CY325.png" />
+      <file href="story_content/6N6LtGjlo42_DX276_DY276.jpg" />
+      <file href="mobile/6N6LtGjlo42_DX276_DY276_CX111_CY138.jpg" />
+      <file href="story_content/6kt4aQQy1RR_DX112_DY112.jpg" />
+      <file href="mobile/6kt4aQQy1RR_DX112_DY112_CX56_CY56.jpg" />
+      <file href="story_content/txt__default_6khzdFgjcDy.swf" />
+      <file href="story_content/Slide6YxjVpI5EIo.swf" />
+      <file href="story_content/6mWiJwnUtpj_DX1152_DY1152.swf" />
+      <file href="mobile/6mWiJwnUtpj_DX1152_DY1152_CX340_CY861.png" />
+      <file href="story_content/6Dw09Z3vNYP_22050_160_0.mp3" />
+      <file href="meta.xml" />
+      <file href="story_content/FontFactory.swf" />
+      <file href="story_content/fonts.swf" />
+      <file href="story_content/frame.xml" />
+      <file href="story_content/frame.json" />
+      <file href="story_content/user.js" />
+      <file href="mobile/txt__default_6khzdFgjcDy.png" />
+      <file href="mobile/Slide6YxjVpI5EIo.jpg" />
+      <file href="story.swf" />
+      <file href="story_content/frame.swf" />
+      <file href="story_content/slides/6IO60DMWNhM.swf" />
+      <file href="story_content/slides/6Iim5NKm7xI.swf" />
+      <file href="story_content/slides/65PBcAHCAH0.swf" />
+      <file href="story_content/slides/6P6k8BAQRqj.swf" />
+      <file href="story_content/data.swf" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/65PBcAHCAH0.js" />
+      <file href="html5/data/js/6Iim5NKm7xI.js" />
+      <file href="html5/data/js/6IO60DMWNhM.js" />
+      <file href="html5/data/js/6P6k8BAQRqj.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/app.min.js" />
+      <file href="html5/lib/stylesheets/main.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="story.html" />
+      <file href="story_flash.html" />
+      <file href="story_html5.html" />
+      <file href="story_content/blank.html" />
+      <file href="story_content/story.js" />
+      <file href="index_lms.html" />
+      <file href="index_lms_html5.html" />
+      <file href="index_lms_flash.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/AICCFunctions.js" />
+      <file href="lms/API.js" />
+      <file href="lms/APIConstants.js" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/Configuration.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/lms.js" />
+      <file href="lms/LMSAPI.js" />
+      <file href="lms/NONEFunctions.js" />
+      <file href="lms/SCORM2004Functions.js" />
+      <file href="lms/SCORMFunctions.js" />
+      <file href="lms/UtilityFunctions.js" />
+    </resource>
+  </resources>
+</manifest>

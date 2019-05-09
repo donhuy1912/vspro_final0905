@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Udema a modern educational site template">
+  <meta name="author" content="Ansonika">
+  <title>VS-PRO | Visual Programming Learning</title>
+
+  <!-- Favicons-->
+  <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'homepage/img/apple-touch-icon-57x57-precomposed.png' %}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'homepage/img/apple-touch-icon-72x72-precomposed.png' %}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'homepage/img/apple-touch-icon-114x114-precomposed.png' %}">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'homepage/img/apple-touch-icon-144x144-precomposed.png' %}">
+
+  <!-- BASE CSS -->
+  <link href="{% static 'homepage/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'homepage/css/vendors.css' %}" rel="stylesheet">
+  <link href="{% static 'homepage/css/icon_fonts/css/all_icons.min.css' %}" rel="stylesheet">
+
+  <!-- SPECIFIC CSS -->
+  <link href="{% static 'homepage/css/skins/square/grey.css' %}" rel="stylesheet">
+
+  <!-- YOUR CUSTOM CSS -->
+
+  <link href="{% static 'homepage/css/custom.css' %}" rel="stylesheet">
+  <link href="{% static 'homepage/vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="{% static 'homepage/vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+
+  <!-- Custom styling plus plugins -->
+  <link href="{% static 'homepage/build/css/custom.min.css' %}" rel="stylesheet">
+  <script src="{% static 'homepage/js/jquery-2.2.4.min.js' %}"></script>
+
+  <!-- Font Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
+   <!-- CK-EDITOR -->
+    <link href="{% static 'ckeditor/ckeditor_uploader/admin_base.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <style>
+        hr {
+      overflow: visible; /* For IE */
+      padding: 0;
+      border: none;
+      border-top: medium double #FFC107;
+      color: #FFC107;
+      text-align: center;
+  }
+  hr:after {
+      content: "§";
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: white;
+  }
+      </style>
+</head>
+
+<body class="nav-md" style="background: #121921;">
+	
+	<div id="page" class="theia-exception" style="height: auto;min-height: 600px">
+		
+    <header class="header menu_2">
+			<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
+			<div id="logo">
+				<a href="{% url 'homepage:index' %}"><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></a>
+			</div>
+			<ul id="top_menu">
+				<li><a href="login.html" class="login">Login</a></li>
+				<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
+				<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
+			</ul>
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu" style="padding-right:50px">
+				<ul>
+            <li><span><a href="#0">Giới Thiệu</a></span>
+              <ul>
+                <li><a href="{% url 'homepage:introduction' %}"><i class="fa fa-globe" style="font-size:14pt"></i>&nbsp&nbsp Tổng Quan</a></li>
+                <li><a href="{% url 'usernews:usernews' %}"><i class="fa fa-newspaper-o" style="font-size:14pt"></i>&nbsp&nbsp Tin Tức</a></li>
+                <li><a href="{% url 'homepage:vision' %}"><i class="fa fa-heartbeat" style="font-size:14pt"></i>&nbsp&nbsp Sứ Mệnh</a></li>
+                <li><a href="{% url 'homepage:team' %}"><i class="fa fa-group" style="font-size:14pt"></i>&nbsp Chuyên gia</a></li>
+                <li><a href="{% url 'homepage:aboutus' %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp &nbsp Về Chúng Tôi</a></li>
+                {% comment %} <li><a href="contacts.html">Liên Hệ</a></li> {% endcomment %}
+              </ul>
+            </li>
+  
+            <li><span><a href="#0">Tynker</a></span>
+              <ul>
+                <li><a href="{% url 'course:coursedetail' 1 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+                <li><a href="{% url 'course:coursechapter' 1 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+                <li><a href="{% url 'usergame:gamelist' 1 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+                <li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp&nbsp Cuộc Thi</a></li>
+                <li><a href="{% url 'course:userforumcourse' 1 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+                
+              </ul>
+            </li>
+  
+            <li><span><a href="#0">Alice3D</a></span>
+              <ul>
+                <li><a href="{% url 'course:coursedetail' 2 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp Giới Thiệu</a></li>
+                <li><a href="{% url 'course:coursechapter' 2 %}"><i class="fas fa-book-open" style="font-size:14pt"></i> Bài Học</a></li>
+                <li><a href="{% url 'usergame:gamelist' 2 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+                <li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fas fa-file-alt" style="font-size:14pt"></i>&nbsp Dự Án</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fas fa-award" style="font-size:14pt"></i>&nbsp Cuộc Thi</a></li>
+                <li><a href="{% url 'course:userforumcourse' 2 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+                
+              </ul>
+            </li>
+  
+            <li><span><a href="#0">Arduino</a></span>
+              <ul>
+                <li><a href="{% url 'course:coursedetail' 3 %}"><i class="fas fa-clone" style="font-size:14pt"></i>&nbsp&nbsp Giới Thiệu</a></li>
+                <li><a href="{% url 'course:coursechapter' 3 %}"><i class="fas fa-book-open" style="font-size:14pt"></i>&nbsp Bài Học</a></li>
+                <li><a href="{% url 'usergame:gamelist' 3 %}"><i class="fa fa-cubes" style="font-size:14pt"></i>&nbsp Trò Chơi</a></li>
+                <li><a href="{% url 'userprojectshare:projectshare' %}"><i class="	fas fa-file-alt" style="font-size:14pt"></i>&nbsp&nbsp Dự Án</a></li>
+                <li><a href="{% url 'course:userforumcourse' 3 %}"><i class="fa fa-comments" style="font-size:14pt"></i> Diễn Đàn</a></li>
+                <li><a href="{% url 'homepage:resource' %}"><i class="fas fa-file" style="font-size:14pt"></i>&nbsp&nbsp Tài Nguyên</a></li>
+                
+              </ul>
+            </li>
+            <li><span><a href="#0">Khóa Học</a></span>
+              <ul>
+                <li><a href="{% url 'course:showsubjectcate' 1 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+                <li><a href="{% url 'course:showsubjectcate' 2 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+                <li><a href="{% url 'course:showsubjectcate' 3 %}"><i class="fa fa-database" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+                <li><a href="{% url 'course:showsubjectcate2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp &nbsp Môi Trường Khác...</a></li>
+              </ul>
+            </li>
+            
+            <li><span><a href="#0">Cuộc Thi</a></span>
+              <ul>
+                {% comment %} <li><a href="#"><i class="fa fa-map" style="font-size:14pt"></i>&nbsp Chia Sẻ</a></li> {% endcomment %}
+                <li><a href="{% url 'usercompetition:competitionenvironment' 1 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Tynker</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 2 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Alice 3D</a></li>
+                <li><a href="{% url 'usercompetition:competitionenvironment' 3 %}"><i class="fa fa-paper-plane" style="font-size:14pt"></i>&nbsp Môi Trường Arduino</a></li>
+                <li><a href="{% url 'usercompetition:listcompetition2' %}"><i class="fa fa-ellipsis-v" style="font-size:14pt"></i>&nbsp&nbsp &nbsp Môi Trường Khác...</a></li>
+              </ul>
+            </li>
+  
+            <li><span><a href="#0">Hỏi Đáp</a></span>
+              <ul>
+                <li><a href="{% url 'userprojectshare:projectshare' %}"><i class="fa fa-file-alt" style="font-size:14pt"></i>&nbsp  Dự Án Chia Sẻ</a></li>
+                <li><a href="{% url 'userforum:userforum' %}"><i class="fa fa-question-circle" style="font-size:14pt"></i>&nbsp Hỏi Đáp Chuyên Gia</a></li>
+                <li><a href="{% url 'userforum:fastchat' %}"><i class="fa fa-recycle" style="font-size:14pt"></i> Kết Nối Cộng Đồng</a></li>
+              </ul>
+            </li>
+  
+            <li><span><a href="#0">Hỗ Trợ</a></span>
+              <ul>
+                <li><a href="{% url 'homepage:sitemap' %}"><i class="fa fa-sitemap" style="font-size:14pt"></i>&nbsp Sơ Đồ Hệ Thống</a></li>
+                <li><a href="{% url 'homepage:userguide' %}"><i class="fa fa-map-signs" style="font-size:14pt"></i>&nbsp Hướng Dẫn</a></li>
+                <li><a href="{% url 'homepage:contact' %}"><i class="fa fa-phone" style="font-size:14pt"></i>&nbsp Liên Hệ</a></li>
+              </ul>
+            </li>
+					
+					<li><span style="border-color: #FFC107">
+							<a href="#0" style="border-color: #FFC107">
+							<img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline">
+								{{account.username}}
+							</a>
+						</span>
+						<ul>
+							
+							{% comment %} <li><a href="{% url 'homepage:profile' account.accountid %}">Chỉnh Sửa Tài Khoản</a></li> {% endcomment %}
+							
+							<li><a href="{% url 'course:dashboard' %}"><i class="fa fa-hdd-o" style="font-size:14pt"></i>&nbsp Tiến Trình</a></li>
+							<li><a href="{% url 'homepage:myprofile' account.accountid %}"><i class="fa fa-id-badge" style="font-size:14pt"></i>&nbsp&nbsp Hồ Sơ</a></li>
+							
+
+							{% if account.accounttypeid.accounttypeid == 1 %}
+              				<!--DO SOMETHING WITH ADMIN ACCOUNT-->
+							<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp Quản Lý</a></li>
+							{% endif %}
+							
+							{% if account.accounttypeid.accounttypeid == 2 %}
+								<li><a href="{% url 'course:managecourse' %}"><i class="fa fa-cog" style="font-size:14pt"></i>&nbsp&nbsp Quản Lý</a></li>
+							{% endif %}
+
+							<li><a href="{% url 'homepage:logout' %}"><i class="fa fa-share" style="font-size:14pt"></i>&nbsp Đăng Xuất</a></li>
+
+							{% comment %} <li><a href="{% url 'course:mycourse' %}">Khóa Học Của Tôi</a></li>
+							<li><a href="{% url 'course:dashboard' %}">Hoạt Động Gần Đây</a></li>
+							<li><a href="{% url 'homepage:logout' %}">Đăng Xuất</a></li> {% endcomment %}
+						</ul>
+					</li>
+					
+
+			</ul>
+		</nav>
+		<!-- Search Menu -->
+		<div class="search-overlay-menu">
+			<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+			<form role="search" id="searchform" method="get">
+				<input value="" name="q" type="search" placeholder="Search..." />
+				<button type="submit"><i class="icon_search"></i>
+				</button>
+			</form>
+		</div><!-- End Search Menu -->
+	</header>
+	<!-- /header -->
+    
+  </header>
+  <!-- /header -->
+
+  <main style="background:url(https://www.onhold.on.ca/wordpress/wp-content/uploads/2018/07/3950.jpg)">
+    <section id="hero_in" class="courses" > 
+     <div class="wrapper">
+      <div class="container">
+       <h1 class="fadeInUp">Tạo bài<span></span><small style="font-size:21pt">{{subject.subjectname}}</small></h1>
+     </div>
+   </div>
+ </section>
+ <!--/hero_in-->
+
+ <div class="filters_listing sticky_horizontal">
+
+<!-- /container -->
+</div>
+<!-- /filters -->
+
+<div class="container body" style="margin-top: 15px;height: auto;min-height: 700px;">
+  <div class="main_container" style="height: auto;min-height: 700px;">
+
+      <div class="" align="center" style="width:100%">
+          <div class="page-title" align="center">
+            <div class="title_left" style="width:100%">
+            
+          </div>
+
+          
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="x_panel" style="width: 100%;height:auto;">
+              <div class="x_title" style="border-radius:2%">
+                
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+
+                  </li>
+                  <li>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <style>
+                  .create{
+                    color: #841ca2;
+                    font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
+                    font-size: 16px;
+                    font-weight: 1000;
+                    line-height: 1.471;
+                  }
+                  .createinput{
+                    border-color: #225798;
+                    
+                  }
+                </style>
+                <form class="form"  enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            
+                            <label for="subjectname" class="create" style="font-size: 20pt">Tên Bài*</label> 
+                            <input type="text" name="chaptername" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                            <label for="description" class="create" style="font-size: 20pt">Mô tả ngắn*</label> 
+                            <input type="text" name="description" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                            <hr>
+                            <label for="content" class="create" style="font-size: 20pt">Mô tả*</label> 
+                            <textarea cols="40" id="id_description" maxlength="100" name="content" rows="10" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: null, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserImageBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;filebrowserImageUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserUploadUrl&quot;: &quot;/ckeditor/upload/&quot;, &quot;filebrowserBrowseUrl&quot;: &quot;/ckeditor/browse/&quot;, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_description" data-type="ckeditortype"></textarea>
+                            
+									          {% comment %} <label for="" class="create" style="font-size: 20pt">Ảnh đại diện*</label>
+                            <br>
+                            <label id="butavar" type="file" for="upload" class="btn_1 rounded " style="width: auto;background-color: #3f9fff">Chọn Ảnh </label>	
+                            <input id="upload" name="fileSM" type="file" style="display:none">
+                            <br> {% endcomment %}
+                            <hr>
+                            <label for="note" class="create" style="font-size: 20pt">Ghi chú</label>
+                            <input type="text" name="note" autocomplete = "off"  class="form-control" style="width:30%;"/>
+                            <br>
+                            {% comment %} <label for="order" class="create" style="font-size: 20pt">Thứ tự*</label> 
+                            <input type="text" name="description" autocomplete = "off" class="form-control" style="width:30%;" required="required"/>
+                             {% endcomment %}
+                            <div style="width:100%;" align="center">
+                              <button type="submit" class="btn_1 rounded "><span class="glyphicon glyphicon-plus"></span> Thêm</button>
+                            </div>
+                        </div>
+                        </form>
+                                            
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+              <script>
+                $("#upload").change(function(){
+                  var filename = $('input[type=file]').val().split('\\').pop();
+                    filename= "Tên ảnh: ("+filename+")"
+										$("#butavar").html(filename);
+										$("#upimg").css({"display":""});
+                })
+              </script>
+    <!-- /page content -->
+
+    <!-- footer content -->
+
+    <!-- /footer content -->
+
+  </div>
+
+</main>
+<!--/main-->
+
+<footer>
+    <div class="container margin_120_95">
+        <br><br>
+      <div class="row">
+          <br>
+        <div class="col-lg-5 col-md-12 p-r-5">
+          <p><img src="{% static 'homepage/img/logo_2x.png' %}" width="149" height="42" data-retina="true" alt=""></p>
+          <p>VS-Pro là một trang Web học tập STEM trực tuyến không nhằm mục đích thương mại, là một đồ án khóa luận tốt nghiệp của sinh viên Đại Học Sư Phạm thành phố Hồ Chí Minh.<br> Giáo dục là động lực phát triển của nền văn minh nhân loại, Giáo dục thì cần được phát triển có hệ thống và cần được cung cấp miễn phí. </p>
+          <div class="follow_us">
+            <ul>
+              <li>Mạng Xã Hội</li>
+              <li><a href="#0"><i class="ti-facebook"></i></a></li>
+              
+              <li><a href="#0"><i class="ti-google"></i></a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 ml-lg-auto">
+          <h5>Liên Kết Nhanh</h5>
+          <ul class="links">
+            <li><a href="{% url 'homepage:introduction' %}">Tổng Quan</a></li>
+            <li><a href="{% url 'homepage:aboutus' %}">Về Chúng Tôi</a></li>
+            <li><a href="{% url 'homepage:register' %}">Đăng Kí</a></li>
+            <li><a href="#0">Tin tức</a></li>
+            <li><a href="#0">Liên Lạc</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Liên hệ</h5>
+          <ul class="contacts">
+            <li><a href="tel://61280932400"><i class="ti-mobile"></i>0799 533166 - 0933 603326</a></li>
+            <li><a href="mailto:info@udema.com"><i class="ti-email"></i>vsprodhsp@gmail.com</a></li>
+            <li><a href="mailto:info@udema.com"><i class="ti-location-pin"></i>Trung Tâm Tin Học 280 An Dương Vương, P4, Q5, TP HCM</a></li>
+          </ul>
+          
+        </div>
+      </div>
+      <!--/row-->
+      <hr class="ss">
+      <div class="row">
+        <div class="col-md-8">
+          <ul id="additional_links">
+            {% comment %} <li><a href="#0">Terms and conditions</a></li>
+            <li><a href="#0">Privacy</a></li> {% endcomment %}
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div id="copy">©2019 VS-PRO</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<!--/footer-->
+</div>
+<script>
+    $(document).ready(function()
+    {
+      setTimeout(respckeditor,2000)
+    })
+    function respckeditor()
+    {
+      $('#cke_id_description').css({'width':'100%'})
+    }
+</script>
+<!-- COMMON SCRIPTS -->
+
+
+<script src="{% static 'homepage/js/main.js' %}"></script>
+<script src="{% static 'homepage/assets/validate.js' %}"></script>'
+
+
+<script src="{% static 'homepage/vendors/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'homepage/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'homepage/vendors/fastclick/lib/fastclick.js' %}"></script>
+<!-- NProgress -->
+<script src="{% static 'homepage/vendors/nprogress/nprogress.js' %}"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="{% static 'homepage/build/js/custom.min.js' %}"></script>
+
+</body>
+</html>

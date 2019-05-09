@@ -1,0 +1,98 @@
+{% extends "homepage/base.html" %}
+{%load static%}
+	{% block main %}
+		<section id="hero_in" class="courses">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Danh sách khóa học</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+		<div class="filters_listing sticky_horizontal">
+			<div class="container">
+				<ul class="clearfix">
+					<li>
+						
+					</li>
+					<li>
+						
+					</li>
+					<li>
+			
+					</li>
+				</ul>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /filters -->
+
+		<div class="container margin_60_35">
+			<div class="row">
+				{% for arr in arrSubM %}
+					<div class="col-xl-4 col-lg-6 col-md-6">
+					<div class="box_grid wow">
+						<figure class="block-reveal">
+							<div class="block-horizzontal"></div>
+							<a href="{% url 'course:coursedetail' arr.subject.subjectid %}" class="wish_bt"></a>
+							<a href="{% url 'course:coursedetail' arr.subject.subjectid %}"><img src="{{arr.subject.avatar}}" style="width:800px;height:194px;" class="img-fluid" alt=""></a>
+							<div class="price">Free</div>
+							<div class="preview"><span>Preview course</span></div>
+						</figure>
+						<div class="wrapper">
+							<small>{{arr.cate}}</small>
+							<h3>{{arr.subject.subjectname}}</h3>
+							<p>{{arr.subject.description}}</p>
+							<div class="rating">
+										{% for j in '01234' %}
+											{% if j|add:"0" < arr.avgRate|add:"0" %}
+												<i class="icon_star voted"></i>
+											{% else %}
+												<i class="icon_star"></i>
+											{% endif %}
+										{% endfor %}
+							<small>{{arr.countAR}}</small></div>
+						</div>
+						<ul>
+							<li><i class="icon_clock_alt"></i>{{arr.sumTime}}</li>
+							<li><i class="icon_like"></i>&nbsp{{arr.sublike}}</li>
+							<li><a href="{% url 'course:coursedetail' arr.subject.subjectid %}">Chi tiết</a></li>
+						</ul>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<!-- /row -->
+			<div style="width:100%" alig="center">
+		<div class="pagination" style="padding-left:50%">
+	
+						<span class="step-links">
+							{% if arrSubM.has_previous %}
+								<a  href="?page=1">&laquo; Trang đầu</a>
+								<a  href="?page={{ arrSubM.previous_page_number }}">Trang trước</a>
+							{% endif %}
+
+							<span class="current">
+								Page {{ arrSubM.number }} of {{ arrSubM.paginator.num_pages }}
+							</span>
+
+							{% if arrSubM.has_next %}
+								<a  href="?page={{ arrSubM.next_page_number }}">Trang kế</a>
+								<a  href="?page={{ arrSubM.paginator.num_pages }}">Trang cuối &raquo;</a>
+							{% endif %}
+						</span>
+					
+	</div>
+	</div>
+			{% if show == 0 %}
+				<h3 class="text-center">Không tìm thấy kết quả nào!</h3>
+				<p class="text-center"><a href="{% url 'homepage:index' %}" class="btn_1 rounded add_top_30">Trở về</a></p>
+			{% endif %}
+			
+			
+		</div>
+		<!-- /container -->
+		
+		<!-- /bg_color_1 -->
+	{% endblock %}
+	<!--/main-->

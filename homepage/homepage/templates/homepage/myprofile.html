@@ -1,0 +1,281 @@
+{% extends "homepage/baseprivate.html" %}
+{%load static%}
+
+	{% block main %}
+		<section id="hero_in" class="general" style="background: url({{account.avatar}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Thông Tin Cá Nhân</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<div class="container margin_60_35">
+			<div class="row">
+				<div class="col-lg-9">
+
+					<article class="blog wow fadeIn">
+						<div class="row no-gutters">
+						<div class="box_cart" style="width: 100%;margin-bottom: 0px">
+						
+						<div class="form_title">
+							<h3><strong>1</strong>Thông Tin Tài Khoản</h3>
+							<p>
+								Thông Tin Tổng Quát Tài Khoản
+							</p>
+						</div>
+						<div class="message" align="right" style="background-color: white">
+							<p> <a href="{% url 'homepage:editmyprofile' account.accountid %}" style="color:#3366ff"><i class="fa fa-edit"></i>Chỉnh Sửa Tài Khoản</a></p>
+						</div>
+						<div class="step">
+							<div class="row">
+								<div class="col-sm-6">
+									<img src="{{account.avatar}}" alt="" style="border-radius: 50%; width: 150px; height: 150px">
+									{% comment %} <img src="{{account.avatar}}" alt="Avatar" style="width:40px;height:40px;border-radius:50%;display:inline"> {% endcomment %}
+								</div>
+								<div class="col-sm-6">
+									{% comment %} <span class="input">
+										<input class="input_field" type="email"  disabled>
+										<label class="input_label" >
+											<span class="input__label-content" style="color:#ff0066;width:100%" align="center"><strong> {{account.username.upper}}</strong></span>
+										</label>
+									</span> {% endcomment %}
+								</div>
+								
+
+							
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<span class="input">
+										<input class="input_field" type="text" disabled >
+										<label class="input_label">
+										<span class="input__label-content" style="color:#ff0066;"><strong> {{account.username.upper}}</strong></span>
+										
+										</label>
+									</span>
+								</div>
+								<div class="col-sm-6">
+									<span class="input">
+										<input class="input_field" type="text" disabled>
+										<label class="input_label">
+											<span class="input__label-content" style="color:#333300">{{userdetail.lastname}} {{userdetail.firstname}}</span>
+										
+										</label>
+									</span>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<span class="input">
+										<input class="input_field" type="text" disabled>
+										<label class="input_label">
+											<span class="input__label-content" style="color:#333300">{{userdetail.birthday}}</span>
+										</label>
+									</span>
+								</div>
+								<div class="col-sm-6">
+									<span class="input">
+										<input class="input_field" type="text" disabled>
+										<label class="input_label">
+											<span class="input__label-content" style="color:#333300">{{userdetail.address}}</span>
+										</label>
+									</span>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-6">
+									<span class="input">
+										<input class="input_field" type="text" disabled>
+										<label class="input_label">
+											<span class="input__label-content" style="color:#333300">{{userdetail.phonenumber}}</span>
+										</label>
+									</span>
+								</div>
+								<div class="col-sm-6">
+									<span class="input">
+										<input class="input_field" type="email" disabled>
+										<label class="input_label">
+											<span class="input__label-content" style="color:#333300">{{userdetail.email}}</span>
+										</label>
+									</span>
+								</div>
+							</div>
+
+						</div>
+						<!--End step -->
+
+						
+						<!--End step -->
+						
+						</div>
+
+						</div>
+					</article>
+
+
+					
+					<!-- /article -->
+
+					<article class="blog wow fadeIn">
+						<div class="row no-gutters">
+						<div class="box_cart" style="width: 100%;margin-bottom: 0px">
+						
+						<div class="form_title">
+							<h3><strong>2</strong>Khoá Học Đã Hoàn Thành</h3>
+							<p>
+								Danh Sách Các Khóa Học Bạn Đã Hoàn Thành 100% Các Hoạt Động
+							</p>
+						</div>
+						<div class="step">
+							{% if lensub == 0 %}
+								<div class="message">
+								<p style="color:#ff0000"><a>Chưa có khóa học nào đã hoàn thành</a></p>
+								</div>
+							{% else %}
+								{% for sub in subList %}
+									<div class="message">
+									<p><a href="{% url 'course:coursedetail' sub.subjectid %}" style="color:#3366ff">{{sub.subjectname}}</a></p>
+									</div>
+								{% endfor %}
+							{% endif %}
+							
+
+							
+						</div>
+						
+						<!--End step -->
+
+						
+						<!--End step -->
+						
+						</div>
+
+						</div>
+					</article>
+					<!-- /article -->
+					<article class="blog wow fadeIn">
+						<div class="row no-gutters">
+						<div class="box_cart" style="width: 100%;margin-bottom: 0px">
+						
+						<div class="form_title">
+							<h3><strong>3</strong>Khoá Học Đang Tham Gia</h3>
+							<p>
+								Các Khóa Học Mà Bạn Đang Tham Gia Nhưng Chưa Hoản Thành
+							</p>
+						</div>
+						<div class="step">
+							{% if lennotsub == 0 %}
+								<div class="message">
+								<p style="color:red"><a>Bạn chưa tham gia khóa học nào</a></p><p><a href="#0">Hãy tham gia!</a></p>
+								</div>
+							{% else %}
+								{% for notsub in notsubList %}
+									<div class="message">
+									<p><a href="{% url 'course:coursedetail' notsub.subjectid %}">{{notsub.subjectname}}</a></p>
+									</div>
+								{% endfor %}
+							{% endif %}
+
+							
+						</div>
+						
+						<!--End step -->
+
+						
+						<!--End step -->
+						
+						</div>
+
+						</div>
+					</article>
+					
+					<!-- /pagination -->
+				</div>
+				<!-- /col -->
+
+				<aside class="col-lg-3" style="font-family: Arial">
+					<div class="widget">
+						
+					</div>
+					<!-- /widget -->
+					<div class="widget">
+						<div class="widget-title">
+							<h4>Các Bài Chia Sẻ Đã Tạo</h4>
+						</div>
+						<ul class="comments-list">
+							
+							{% if lenpro == 0 %}
+								<a style="color:red">Bạn chưa tạo bài chia sẻ nào</a><br>
+								<a href="{% url 'userprojectshare:projectsharecreate' %}">Hãy tạo ngay!</a>
+							{% else %}
+								{%for projectshare in projectshares %}
+									<li>	
+										<div class="alignleft">
+										{% if projectshare.avatar != null %}
+											{% comment %} <a href="#0"><img src="{{account.avatar}}" alt="" style=" width: 150pt; height: 150pt; border-radius: 50%;"></a> {% endcomment %}
+											<a href="#0"><img src="{{projectshare.avatar}}" alt="" style=" width: 60pt; height: 60pt; border-radius: 50%;"></a>
+										{% else %}
+											<a href="#0"><img src="http://via.placeholder.com/150x150/ccc/fff/blog-5.jpg" alt="" style="border-radius: 50%"></a>
+										{% endif %}
+										</div>
+										<small>{{projectshare.createdate}}</small>
+										<h3 ><a href="{% url 'userprojectshare:projectsharedetail' projectshare.projectsharetopicid %}" title="" >{{projectshare.projectsharetopicname}}</a></h3>
+									</li>
+								{% endfor %}
+							{% endif %}
+							
+						</ul>
+					</div>
+					<div class="widget">
+						<div class="widget-title">
+							<h4 style="font-size:13pt">Các Chủ Đề Đã Tạo</h4>
+							{% comment %} Danh sách các chủ đề thảo luận mà bạn có nộp bài {% endcomment %}
+						</div>
+						<ul class="comments-list">
+							
+							{% if lenfor == 0 %}
+								<a style="color:#ff1a1a">Bạn chưa tạo chủ đề nào</a><br>
+								<a href="/myuserforum/{{account.accountid}}/">Hãy tạo ngay!</a>
+							{% else %}
+								{%for forum in forums %}
+									<li>	
+										<div class="alignleft">
+											{% if forum.avatar != null %}
+												<a href="#0"><img src="{{forum.avatar}}" alt=""></a>
+											{% else %}
+												<a href="#0"><img src="http://via.placeholder.com/150x150/ccc/fff/blog-5.jpg" sytle="width:150px;height:150px" alt=""></a>
+											{% endif %}
+										</div>
+										<small>{{forum.createdate}}</small>
+										<h3><a href="/userforumblog/{{forum.forumtopicid}}/" title="">{{forum.forumtopicname}}</a></h3>
+									</li>
+								{% endfor %}
+							{% endif %}
+							
+						</ul>
+					</div>
+					<!-- /widget -->
+					<div class="widget">
+						<div class="widget-title">
+							<h4>Thống Kê Hoạt Động</h4>
+						</div>
+						<ul class="cats">
+							<li><a href="#0">Bình Luận Diễn Đàn<span>({{lenforrep}})</span></a></li>
+							<li><a href="#0">Tham Gia Cuộc Thi <span>({{lencompsub}})</span></a></li>
+							<li><a href="#0">Chia Sẻ Dự Án <span>({{lenprorep}})</span></a></li>
+							</ul>
+					</div>
+					
+				</aside>
+				<!-- /aside -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	{% endblock %}
+	<!--/main-->
+	

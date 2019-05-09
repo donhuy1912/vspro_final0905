@@ -1,0 +1,139 @@
+{% extends "homepage/base.html" %}
+{% load static %}
+{% block main %}
+<main>
+	<section id="hero_in" class="general" style="background: url('/media/bia04_moitruongchiaseduan.png');background-repeat: no-repeat;background-position: center;background-size: cover;">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp" style="font-family: Arial, Helvetica, sans-serif"><span></span>Liên Hệ</h1>
+				</div>
+			</div>
+		</section>
+	<!--/hero_in-->
+
+	<div class="contact_info">
+		<div class="container">
+			<ul class="clearfix">
+				<li>
+					<i class="pe-7s-map-marker"></i>
+					<h4>Địa Chỉ</h4>
+					<span>Trung Tâm Tin Học 280 An Dương Vương,<br> P3, Q5, TP HCM</span>
+				</li>
+				<li>
+					<i class="pe-7s-mail-open-file"></i>
+					<h4>Email</h4>
+					<span>vsprodhsp@gmail.com<br><small>Thứ hai - Chủ nhật <br>(24h)</small></span>
+
+				</li>
+				<li>
+					<i class="pe-7s-phone"></i>
+					<h4>Điện Thoại</h4>
+					<span>0799 533166 - 0933 603326<br><small>Thứ hai - Chủ nhật <br>(9h - 17h)</small></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="bg_color_1">
+		<div class="container margin_120_95">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6511791681355!2d106.68000884944952!3d10.761343692294135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b8a072901%3A0x2fb4502ebd044212!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgUGjhuqFtIFRQLiBIQ00!5e0!3m2!1svi!2s!4v1555822296962!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+				<div class="col-lg-6">
+					<h4>Gửi Tin Nhắn</h4>
+					<p><small style="color:red">Nhập đầy đủ thông tin có dấu *</small></p>
+					<div id="message-contact"></div>
+					<form method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+						<div class="row">
+							<div class="col-md-6">
+								<span class="input">
+									<input name="firstname" class="input_field" type="text" id="name_contact" name="name_contact" required="required">
+									<label class="input_label">
+										<span class="input__label-content">Tên*</span>
+									</label>
+								</span>
+							</div>
+							<div class="col-md-6">
+								<span class="input">
+									<input name="lastname" class="input_field" type="text" id="lastname_contact" name="lastname_contact" required="required">
+									<label class="input_label">
+										<span class="input__label-content">Họ*</span>
+									</label>
+								</span>
+							</div>
+						</div>
+						<!-- /row -->
+						<div class="row">
+							<div class="col-md-6">
+								<span class="input">
+									<input name="email" class="input_field" type="email" id="email_contact" name="email_contact" required="required">
+									<label class="input_label">
+										<span class="input__label-content">Email của bạn*</span>
+									</label>
+								</span>
+							</div>
+							<div class="col-md-6">
+								<span class="input">
+									
+								</span>
+							</div>
+						</div>
+						<!-- /row -->
+						<span class="input">
+								<textarea name="content" class="input_field" id="message_contact" name="message_contact" style="height:150px;" required="required"></textarea>
+								<label class="input_label">
+									<span class="input__label-content">Nội dung tin nhắn*</span>
+								</label>
+						</span>
+						<br><br>
+						<button  type="submit" class="btn_1 rounded"> Gửi</button>
+						
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+		<!--/bg_color_1-->
+		
+		<!--/hero_in-->
+
+		
+		<!-- /container -->
+
+		
+
+
+
+		</div>
+
+		
+		<!--/bg_color_1-->
+
+		
+		<!--/container-->
+
+		<script>
+			// Initialize and add the map
+			function initMap() {
+			  // The location of Uluru
+			  var uluru = {lat: -25.344, lng: 131.036};
+			  // The map, centered at Uluru
+			  var map = new google.maps.Map(
+				  document.getElementById('map'), {zoom: 4, center: uluru});
+			  // The marker, positioned at Uluru
+			  var marker = new google.maps.Marker({position: uluru, map: map});
+			}
+				</script>
+				<!--Load the API from the specified URL
+				* The async attribute allows the browser to render the page while the API loads
+				* The key parameter will contain your own API key (which is not needed for this tutorial)
+				* The callback parameter executes the initMap() function
+				-->
+		
+	{% endblock%}
+	<!--/main-->
+	

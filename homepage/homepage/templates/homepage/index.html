@@ -1,0 +1,510 @@
+{% extends "homepage/basehome.html" %}
+{%load static%}
+
+{% block content %}
+<section class="header-video">
+	<div id="hero_video" style="background:url()">
+		<div>
+			<h3><strong>VS-PRO LEARNING SYSTEM</strong><br></h3>
+			<h4 id="txtlo" style="color:white;font-size:14pt;font-family:Arial;font-style:italic;line-height:30px" ><strong>VS-PRO LEARNING SYSTEM</strong> là đề tài khóa luận tốt nghiệp của nhóm 6 sinh viên Sư phạm Tin học, khóa 41<br>
+				được phát triển dưới hình thức là một hệ thống học tập trực tuyến, dạy và học<strong> lập trình trực quan.</strong><br>
+				VS-PRO ra đời nhằm tạo ra môi trường học tập lập trình lý tưởng cho hầu hết các cấp học <br>
+				Tiểu Học - Trung Học Cơ Sở - Trung Học Phổ Thông </h4>
+		</div>
+		<a href="#first_section" class="btn_explore hidden_tablet"><i class="ti-arrow-down"></i></a>
+	</div>
+	<img src="/media/video_fix.png" alt="" class="header-video--media" data-video-src="/media/intro" data-teaser-source="/media/intro" data-provider="" data-video-width="1920" data-video-height="960">
+	
+</section>
+		<!-- /hero_single -->
+	
+		<div class="features clearfix" id="dock">
+		<script>
+			$("#dock").ready(function(){
+				$("#subname").val("");
+			})
+		</script>
+			<div class="container">
+				<ul>
+					<li><i class="pe-7s-medal"></i>
+						<h4>CỐNG HIẾN</h4><span>Cống hiến hết mình, trao đi những gì có thể</span>
+					</li>
+					<li><i class="pe-7s-like"></i>
+						<h4>TẬN TÂM</h4><span>Bằng tất cả tấm lòng</span>
+					</li>
+					<li><i class="pe-7s-science"></i>
+						<h4>SÁNG TẠO</h4><span>Biến những điều không thể thành có thể</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /features -->
+
+		<div class="container-fluid margin_120_0" id='first_section'>
+			<div class="main_title_2">
+				<span><em></em></span>
+				<h2 style="font-family: Arial, Helvetica, sans-serif; color: #57488a">Những Khóa Học Phổ Biến</h2>
+				<p style="font-family: Arial, Helvetica, sans-serif;color: #FFC107">Giáo dục là con đường mang đến một sức mạnh to lớn</p>
+				<div class="container">
+					
+					
+						<div id="custom-search-input">
+							<div class="input-group">
+								<input id="subname" name="subname" type="text" class=" search-query" placeholder="Bạn Muốn Học Được Gì ?">
+								<input id ="sub" type="submit" class="btn_search" value="Tìm Kiếm">
+							</div>
+						</div>
+					
+				</div>
+			</div>
+			<script>
+				$("#sub").click(function(){
+					var subname = $("#subname").val();
+					if (subname == ''){
+						
+					}
+					else{
+						link = 'search/' + subname;
+						window.location.href = link;
+					}
+					
+				})
+			</script>
+			<div id="reccomended" class="owl-carousel owl-theme">
+				{% for arr in arrSubMas %}
+				<div class="item">
+						<div class="box_grid">
+							<figure>
+								<a href="{% url 'course:coursedetail' arr.subject.subjectid %}" class="wish_bt"></a>
+								<a href="{% url 'course:coursedetail' arr.subject.subjectid %}">
+									<div class="preview"><span>Preview course</span></div>
+									<img style="width:800px;height:194px" src="{{arr.subject.avatar}}" class="img-fluid" alt=""></a>
+									<div class="price">Free</div>
+								</figure>
+								<div class="wrapper">
+									<small>{{arr.cate}}</small>
+									<h3>{{arr.subject.subjectname}}</h3>
+									<p>{{arr.subject.description}}</p>
+									<div class="rating">
+										{% for j in '01234' %}
+											{% if j|add:"0" < arr.avgRate|add:"0" %}
+												<i class="icon_star voted"></i>
+											{% else %}
+												<i class="icon_star"></i>
+											{% endif %}
+										{% endfor %}
+										<small> {{arr.countAR}} </small></div>
+									</div>
+									<ul>
+										<li><i class="icon_clock_alt"></i>{{arr.sumTime}}</li>
+										<li><i class="icon_like"></i> {{ arr.sublike }}</li>
+										<li><a href="{% url 'course:coursedetail' arr.subject.subjectid %}">Chi tiết</a></li>
+									</ul>
+								</div>
+				</div>
+				{% endfor %}
+			</div>
+					<!-- /carousel -->
+					<div class="container">
+						<p class="btn_home_align" align="center"><a href="{% url 'course:allcourse' %}" class="btn_1 rounded" align="center">Xem Tất Cả Khóa Học</a></p>
+					</div>
+					<!-- /container -->
+					<hr>
+				</div>
+				<!-- /container -->
+				
+				
+
+				<!-- Competetion -->
+				<div class="container margin_30_95">
+					<div class="main_title_2">
+						<span><em></em></span>
+						<h2 style="font-family: Arial, Helvetica, sans-serif;color: #57488a">Các Cuộc Thi Hấp Dẫn</h2>
+						<p style="font-family: Arial, Helvetica, sans-serif;color: #FFC107">Cùng nhau tranh tài, Say mê sáng tạo</p>
+					</div>
+					<div class="row">
+					 	{% for competition in competitions %}
+						 <div class="col-lg-4 col-md-6 wow" data-wow-offset="150">
+							<a href="{% url 'usercompetition:competitiondetail' competition.competitionid %}" class="grid_item">
+								<figure class="block-reveal">
+									<div class="block-horizzontal"></div>
+									<img src="{{competition.avatar}}" class="img-fluid" style="border-radius: 20%; height:210px;weight:270px;" alt="">
+									<div class="info">
+										<i class="icon-eye-6"></i><small> {{competition.viewcount}}&nbsplượt xem</small>
+										<h3>{{competition.competitionname}}</h3>
+									</div>
+								</figure>
+							</a>
+						</div>
+						{% endfor %}
+						
+						<!-- /grid_item -->
+					</div>
+					<div class="container">
+						<p class="btn_home_align" align="center"><a href="{% url 'usercompetition:competition' %}" class="btn_1 rounded" align="center">Xem tất cả cuộc thi</a></p>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+
+
+				<div class="gallery" style="background-color: white">
+					<div class="container">
+						<div class="gallery-main">
+							<div class="gallery-top">
+								<span><em></em></span>
+								<h2 style="font-size: 24pt;font-weight: 300;line-height: 1.4;;font-family: Arial, Helvetica, sans-serif;color: #57488a">
+								Các Dự Án Nổi Bật</h2>
+								<p style="font-size: 15pt;color:#FFC107 "> Chia Sẻ Dự Án Cùng Học Hỏi Kinh Nghiệm</p>
+							</div>
+							<div class="gallery-bottom">
+							{% for projectshare in projectshares %}
+								<div class="col-md-4 gallery-grid">
+									<div class="gallery-grid-effects">
+										<div id="nivo-lightbox-demo">      
+											<div class="ih-item square effect4 bottom_to_top"><a href="{% url 'userprojectshare:projectsharedetail' projectshare.projectsharetopicid %}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo">
+												<div class="img"><img src="{{projectshare.avatar}}" alt="img"></div>
+												<div class="mask1"></div>
+												<div class="mask2"></div>
+												<div class="info">
+													<h3>{{projectshare.projectsharetopicname}}</h3>				
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+								
+					
+								
+
+								
+
+								<div class="clearfix"> </div>
+								<div class="container">
+									<p class="btn_home_align" align="center"><a href="{% url 'userprojectshare:projectshare' %}" class="btn_1 rounded" align="center">Xem tất cả dự án</a></p>
+								</div>
+							</div>			
+						</div>
+					</div>
+				</div>
+				<!--gallery end here-->
+				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+				
+				{% comment %} <script type="text/javascript">
+					$(document).ready(function(){
+						$('#nivo-lightbox-demo').nivoLightbox({ effect: 'fade' });
+					});
+				</script> {% endcomment %}
+
+
+				<!-- Best Student -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.min.css"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
+	
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			$("#slider2").responsiveSlides({
+				auto: true,
+				pager: true,
+				speed: 300,
+				namespace: "callbacks",
+			});
+		});
+	</script>	
+<!--clients star here-->
+<div class="clients">
+	<div class="container">
+		<div class="clients-main">	
+			<div class="clients-top">
+				<h3>Thành viên tích cực</h3>
+			</div>
+		 <div class="slider-bann wow bounceInRight" data-wow-delay="0.3s">
+	    <ul class="rslides" id="slider2">
+		{% for member in arrMember %}
+			<li>
+				<div class="clients-text">	 
+					<img src="{{member.account.avatar}}" style="border-radius:50%;width:100px;height:100px" alt="">    	     	
+					<p>Đã tham gia {{member.numenroll}} khóa học và đóng góp {{member.numrep}} bình luận</p>		 		        
+					<h4>{{member.name}}</h4><br>	     	     
+				</div>
+	      </li>
+		{% endfor %}
+	    </ul>
+	     </div>
+    </div>
+
+	</div>
+</div>
+
+
+
+<!-- New Start Here -->
+<div class="bg_color_1">
+	<div class="container margin_120_95">
+		<div class="main_title_2">
+			<span><em></em></span>
+			<h2 style="font-family: Arial, Helvetica, sans-serif;color: #57488a">Tin Tức và Sự Kiện</h2>
+			<p style="font-family: Arial, Helvetica, sans-serif;color: #FFC107">Những thông tin liên quan đến VSPro</p>
+		</div>
+		<div class="row">
+		<!-- /box_news -->
+		{% for newslist in newsuserdetaillist %}
+			<div class="col-lg-6">
+				<a class="box_news" href="/usernewsblog/{{newslist.news.newsid}}/">
+					<figure><img src="{{ newslist.news.avatar }}" style="width: 500px; height: 333px" alt="">
+						<figcaption><strong>{{ newslist.news.createdate.day }}</strong>{{ newslist.news.createdate.month }}</figcaption>
+					</figure>
+					<ul>
+						<li>{{ newslist.userdetail.lastname }} {{ newslist.userdetail.firstname }}</li>
+						<li>{{ newslist.news.createdate.day }}.{{ newslist.news.createdate.month }}.{{ newslist.news.createdate.year }}</li>
+					</ul>
+					<h4>{{ newslist.news.newsname }}</h4>
+					<p>{{ newslist.news.description }}</p>
+				</a>
+			</div>
+		{% endfor %}
+			<!-- /box_news -->
+			
+		</div>
+		<!-- /row -->
+		<p class="btn_home_align"><a href="{% url 'usernews:usernews'  %}" class="btn_1 rounded">
+		Xem tất cả tin tức</a></p>
+	</div>
+	<!-- /container -->
+</div>
+<div id="live-chat" style="background-color: #33ddff;z-index:100">
+		
+		<section id="chatheader" class="clearfix" style="    background: #293239;border-radius: 5px 5px 0 0;color: #fff;cursor: pointer;padding: 16px 24px;">
+			
+			
+
+			<h4 style="color:white">VS-PRO</h4>
+			<input id='lastid' style="color:black;display:none" type="number" value=0 >
+			<input id='isread' style="color:black;display:none" type="number" value=0 >
+			<span id='countmes' class="chat-message-counter">0</span>
+
+		</section>
+		<div class="chat">
+			
+			<div class="chat-history" id='chathis'>
+				
+				<div class="chat-message clearfix">
+					
+					<img src="/media/logo_3x.png" alt="" width="32" height="32">
+
+					<div class="chat-message-content clearfix">
+						
+						<span class="chat-time">{{hm}}</span>
+
+						
+						<strong>VSPro</strong>
+						<p>Chúng tôi có thể giúp gì được cho bạn!</p>
+
+					</div> 
+					<hr>
+				</div>
+				
+
+				
+				 <!-- end chat-message -->
+
+				
+
+				
+
+			</div> <!-- end chat-history -->
+
+			
+
+			<div style="padding:24px">
+
+				<fieldset>
+					<div style="width:100%" >
+						<input style="width:75%" id="inputchat" type="text" placeholder="Nhập tin nhắn..." autofocus>
+						<button id='btnsendmes' class="buttonsend" style="width:15%;background:white ;border-radius: 10%">
+							<i class="fa fa-fighter-jet"></i>
+						</button>
+					</div>
+					
+
+				</fieldset>
+
+			</div>
+
+		</div> <!-- end chat -->
+
+	</div>
+	<script>
+	var t=1
+	$("#inputchat").on('keyup', function (e) {
+			if (e.keyCode == 13) {
+				var content=$("#inputchat").val();
+				var userip=$("#userip").val();
+				$("#inputchat").val('');
+				if (content != "")
+				{
+					$.ajax({
+					url: '/ajax/ajaxsentmes/',
+					data: {
+						'content': content,
+						'userip':userip
+					},
+					dataType: 'json',
+					success: function (data) {
+						
+						$('#chathis').animate({
+						scrollTop: $('#chathis').get(0).scrollHeight
+					}, 2000);
+						 if((data.s == 0) && (t==1))
+							{
+								t=0;
+								var temp= $('#chathis').html() + data.a;
+								$('#chathis').html(temp);
+							}
+					}
+					});
+
+				}
+			}
+		});
+		$('#btnsendmes').click(function(){
+			var content=$("#inputchat").val();
+			var userip=$("#userip").val();
+			$("#inputchat").val('');
+			if (content != "")
+			{
+				$.ajax({
+				url: '/ajax/ajaxsentmes/',
+				data: {
+					'content': content,
+					'userip':userip
+				},
+				dataType: 'json',
+				success: function (data) {
+					
+					$('#chathis').animate({
+					scrollTop: $('#chathis').get(0).scrollHeight
+				}, 2000);
+				
+				if((data.s == 0) && (t==1))
+				{
+					t=0;
+					 var temp= $('#chathis').html() + data.a;
+					 $('#chathis').html(temp);
+				 }
+				}
+				});
+
+			}
+		});
+		$(document).ready(function()
+		{
+			var userip=$("#userip").val();
+			$.ajax({
+					url: '/ajax/getallmes/',
+					data: {
+						'userip':userip,
+					},
+					dataType: 'json',
+					success: function (data) {
+						if(data.flag){
+							var temp= $('#chathis').html() + data.s;
+							$('#chathis').html(temp);
+							$('#lastid').val(parseInt(data.lastid));
+						}
+					}
+					});
+					setInterval(getchat,2000);
+
+		})
+		
+		function getchat(){
+			var userip=$("#userip").val();
+			var lastid=$('#lastid').val();
+			$.ajax({
+					url: '/ajax/getmes/',
+					data: {
+						'lastid':lastid,
+						'userip': userip,
+					},
+					dataType: 'json',
+					success: function (data) {
+						
+						var temp= $('#chathis').html() + data.s;
+						temp=temp.replace("undefined","")
+							$('#chathis').html(temp);
+							 
+								$('#lastid').val(data.lastid);
+								var isreadcheck=$('#isread').val()
+								if(isreadcheck == 0){
+									$('#countmes').html(data.count);
+								}
+								
+						
+								
+					}
+					});
+		}
+	</script>
+<!-- /bg_color_1 -->
+
+{% comment %} <div class="call_section">
+	<div class="container clearfix">
+		<div class="col-lg-5 col-md-6 float-right wow" data-wow-offset="250">
+			<div class="block-reveal">
+				<div class="block-vertical"></div>
+				<div class="box_1">
+					<h3>Enjoy a great students community</h3>
+					<p>Ius cu tamquam persequeris, eu veniam apeirian platonem qui, id aliquip voluptatibus pri. Ei mea primis ornatus disputationi. Menandri erroribus cu per, duo solet congue ut. </p>
+					<a href="#0" class="btn_1 rounded">Read more</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> {% endcomment %}
+
+<input id='userip' style="display:none" value="0">
+<script>
+$(document).ready(function ubsrt()
+{
+  	window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;  
+	var pc = new RTCPeerConnection({iceServers:[]}), 
+	noop = function(){}; 
+     
+   	pc.createDataChannel("");  
+	pc.createOffer(pc.setLocalDescription.bind(pc), noop);   
+    	pc.onicecandidate = function(ice){ 
+   	if(!ice || !ice.candidate || !ice.candidate.candidate)  return;
+
+        	var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+
+        	
+		$('#userip').val(myIP);
+	
+        	pc.onicecandidate = noop;
+  
+	 }; 
+});
+      
+</script>
+<script>
+	$('#live-chat').click(function()
+	{
+		var isread=$('#isread').val()
+		if (isread == 0)
+		{
+			$('#isread').val(1);
+		}
+		else
+		{
+			$('#isread').val(0)
+		}
+
+	})
+</script>
+
+<!--/call_section-->
+{% endblock %}
+<!-- /main -->

@@ -1,0 +1,151 @@
+{% extends "homepage/baseprivate.html" %}
+{%load static%}		
+		{% block main %}
+			<section id="hero_in" class="general" style="background: url({{account.avatar}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+				<div class="wrapper">
+					<div class="container">
+						<h1 class="fadeInUp"><span></span>Chỉnh Sửa Hồ Sơ</h1>
+					</div>
+				</div>
+			</section>
+			<!--/hero_in-->
+			<div class="container margin_60_35">
+				<div class="row">
+					<aside class="col-lg-3" id="sidebar">
+						<div class="profile" class="">
+							<figure style="margin-left: 2px" ><img id="blah" src="{{account.avatar}}" alt="Teacher" class="rounded-circle" style="width: 200px;height: 200px;"></figure>
+							<div style="padding-left:10px;padding-top: 10px;" align="center">
+								<label type="file" for="avatar1" class="btn_1 rounded full-width add_top_30" style="width: 180px;background-color: #3f9fff">Chọn Ảnh </label>	
+							</div>
+
+							<a class="btn_1 rounded full-width" href="{% url 'homepage:changepassword' account.accountid %}">Đổi Mật Khẩu</a>
+							<ul class="social_teacher">
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-email"></i></a></li>
+							</ul>
+							<ul>
+								<li>Tên Tài Khoản <span class="float-right">{{account.username}}</span> </li>
+							</ul>
+						</div>
+					</aside>
+					<!--/aside -->
+
+					<div class="col-lg-9">
+						<div class="box_teacher">
+							<div class="indent_title_in">
+								<i class="pe-7s-user"></i>
+								<h3>Thông Tin</h3>
+								<p>Chi tiết về tài khoản của bạn</p>
+							</div>
+							<div class="wrapper_indent">
+								<form autocomplete="off" style="margin-right: 200px" enctype="multipart/form-data" method="POST">
+									{% csrf_token %}
+									<div class="form-group">
+										{% for message in messages %}
+										<div class="alert alert-success" style="color: #f8f9fa; background-color: #dc3545;">
+											<a class="close" data-dismiss="alert">×</a>
+												{{ message }}
+										</div>
+										{% endfor %}
+										<span class="input">
+											<input name="lastname" value="{{userdetail.lastname}}" class="input_field" type="text" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Họ<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+
+										<span class="input">
+											<input name="firstname" value="{{userdetail.firstname}}" class="input_field" type="text" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Tên<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+
+										<span class="input" >
+											<input id="date-input" name="birthday" value="{{userdetail.birthday}}" class="input_field" type="date" style="padding-left: 100px;" placeholder="dd-mm-yy">
+											<label class="input_label">
+												<span id="span-date" class="input__label-content">Ngày Sinh<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<script language="javascript">
+												function checkyear(){
+													 var span = document.getElementById("span-date");
+													 var date = document.getElementById("date-input");
+													 var n= new Date(date.value).getFullYear();
+													 var n = parseInt(n);
+													 if (n>9999) {
+														 date.value="";
+														 span.innerHTML="Ngày sinh không hợp lệ, định dạng đúng 'DD-MM-YYYY'"
+													 }
+													   };
+												   setInterval(checkyear, 1000);
+											   </script>
+										<span class="input">
+											<input name="address" value="{{userdetail.address}}" class="input_field" type="text" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Địa Chỉ<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<span class="input">
+											<input name="phonenumber" value="{{userdetail.phonenumber}}" class="input_field" type="phone" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Số Điện Thoại<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<span class="input">
+											<input name="email" value="{{userdetail.email}}" class="input_field" type="email" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">Email<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										<span class="input" style="display:none;">
+											<input onchange="readURL(this)" id="avatar1" name="avatar" value="{{userdetail.avatar}}" class="input_field" type="file" style="padding-left: 100px">
+											<label class="input_label">
+												<span class="input__label-content">hinh<b style="color: #fd2828;font-size: 14pt">*</b></span>
+											</label>
+										</span>
+										
+										{% comment %} <script language="javascript">
+  											var input1=document.getElementById("avarta1");
+  											var input2 = document.getElementById("avatar2");
+  											function show_result() {
+    											input1.value=input2.value;
+  											}
+  											setInterval(show_result, 1000);
+										</script> {% endcomment %}
+										<div style="padding-left:32px;padding-top: 25px;" align="center">
+											<button type="submit" class="btn_1 rounded full-width add_top_30" style="width: 180px;background-color: #3f9fff">Lưu Lại </button>
+										</div>
+										<div id="pass-info" class="clearfix"></div>
+									</div>
+
+								</form>
+
+								<!-- End row-->
+							</div>
+							<!--wrapper_indent -->
+
+						</div>
+						<!-- /col -->
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+
+
+		<script>
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+				$('#blah')
+					.attr('src', e.target.result)
+					.width(150)
+					.height(200);
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+			}
+		</script>
+		{% endblock %}
+			<!--/main-->
